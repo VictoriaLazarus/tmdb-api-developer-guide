@@ -1,6 +1,9 @@
 {
   "theme": "mint",
   "name": "TMDB API Developer Guide",
+  "colors": {
+    "primary": "#0D9373"
+  },
   "navigation": {
     "tabs": [
       {
