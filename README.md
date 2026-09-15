@@ -2,13 +2,13 @@
 
 A portfolio project demonstrating the process of turning a real-world API into a structured, developer-friendly OpenAPI reference.
 
-This project uses **The Movie Database (TMDB) API** to demonstrate practical API documentation, API testing, OpenAPI refinement, schema modeling, authentication documentation, and documentation quality assurance.
+This project uses **The Movie Database (TMDB) API** to show practical API documentation, API testing, OpenAPI refinement, schema modeling, authentication documentation, and documentation quality assurance.
 
-The project began with API exploration and endpoint testing in **Postman**. I then generated an OpenAPI specification from the collection and progressively reviewed and refined the generated YAML in **VS Code**.
+The project began with API exploration and endpoint testing in **Postman**, then moved to generating an OpenAPI specification from the collection and progressively reviewed and refined the generated YAML in **VS Code**.
 
 The goal was not simply to produce a valid OpenAPI file. The focus was on improving the **accuracy, consistency, maintainability, and developer experience** of the resulting API reference.
 
-## Project Overview
+## Project overview
 
 The project covers **52 API operations across 51 paths**, organized into the following areas:
 
@@ -22,7 +22,7 @@ The project covers **52 API operations across 51 paths**, organized into the fol
 
 The final OpenAPI specification models the API's requests, parameters, authentication requirements, responses, reusable schemas, and examples in a format suitable for OpenAPI-compatible documentation tooling.
 
-## Documentation Workflow
+## Documentation workflow
 
 The project followed a practical API documentation workflow:
 
@@ -44,7 +44,7 @@ OpenAPI specification prepared for Mintlify
 
 This workflow reflects a documentation-as-code approach in which API documentation is treated as a maintained technical artifact rather than static prose.
 
-## What I Worked On
+## What I worked on
 
 ### API exploration and testing
 
@@ -57,6 +57,7 @@ I worked with the TMDB API in Postman to:
 * Investigate successful and error responses
 * Save representative response examples
 * Organize the API into logical endpoint groups
+* Document the API
 
 The collection contains **52 documented operations** spanning authentication, accounts, certifications, search, discovery, movies, and network-related functionality.
 
@@ -123,41 +124,40 @@ Particular attention was given to distinguishing application authentication from
 
 ### Documentation quality
 
-The generated specification was reviewed as documentation rather than treated solely as machine-readable YAML.
+The generated specification was reviewed and refined to produce a clear, consistent, and developer-friendly API reference.
 
-The review included:
+The review focused on:
 
-* Consistent TMDB terminology
-* Corrected terminology and typographical errors
-* Standardized operation summaries
-* Corrected malformed URLs and paths
-* Corrected request and response structures
-* Consistent parameter definitions
-* Improved request-body requirements
-* Reviewed response descriptions
-* Removed inappropriate captured response artifacts
-* Improved consistency between documented requests and authentication requirements
+* Applying consistent TMDB terminology across endpoints
+* Correcting terminology, grammar, and typographical errors
+* Standardizing operation summaries and endpoint descriptions
+* Correcting malformed URLs and paths
+* Verifying request and response structures
+* Reviewing parameter names, types, and required status
+* Defining required request-body fields
+* Improving response descriptions and error documentation
+* Removing irrelevant or inappropriate captured response artifacts
+* Aligning authentication requirements with the documented requests
+* Improving consistency across related endpoints and API workflows
 
-Existing endpoint documentation was intentionally preserved wherever rewriting was not necessary.
+The resulting specification is designed to be both machine-readable and useful to developers working with the API.
 
-## Documentation Philosophy
+## Documentation approach
 
-A key principle throughout this project was:
+When I generated the OpenAPI specification, I focus on converting this into a reliable, maintainable API reference that developers could use with confidence.
 
-> **Improve the specification without unnecessarily rewriting the author's existing documentation.**
+The review include:
 
-The objective was to preserve useful endpoint explanations while correcting issues that affected:
+* **Accuracy** — ensuring endpoints, parameters, request bodies, responses, and authentication requirements reflect the API behavior
+* **Consistency** — applying consistent terminology, structure, naming, and descriptions across the specification
+* **Clarity** — making endpoint summaries and supporting descriptions easier for developers to understand
+* **Machine readability** — maintaining valid OpenAPI structure and reusable schemas
+* **Security** — removing credential-like values and ensuring authentication requirements are represented appropriately
+* **Maintainability** — using reusable components and consistent structures that can be updated as the API evolves
+* **Developer experience** — providing the information developers need to understand, test, and integrate with the API
 
-* Accuracy
-* Consistency
-* Machine readability
-* Security
-* Reusability
-* Developer usability
 
-This reflects the type of work involved in maintaining and improving an existing production API reference rather than simply creating documentation from scratch.
-
-## Validation and Quality Assurance
+## Validation and quality assurance
 
 The final specification was reviewed for both structural correctness and documentation quality.
 
@@ -181,7 +181,7 @@ Key checks included:
 
 The specification was also reviewed for consistency between its machine-readable definitions and the accompanying endpoint documentation.
 
-## Tools and Technologies
+## Tools and technologies
 
 * **OpenAPI 3.0**
 * **YAML**
@@ -196,7 +196,7 @@ The specification was also reviewed for consistency between its machine-readable
 * Reusable component schemas
 * API authentication and security schemes
 
-## Repository Structure
+## Repository structure
 
 ```text
 tmdb-api-developer-guide/
@@ -240,7 +240,7 @@ assets/images/
 
 Images used to illustrate the documentation can be stored locally in the repository rather than relying on externally hosted assets.
 
-## What This Project Demonstrates
+## What this project demonstrates
 
 This project demonstrates practical experience with:
 
@@ -263,11 +263,11 @@ This project demonstrates practical experience with:
 * Documentation-as-code workflows
 * API documentation tooling
 
-## Why I Built This
+## Why I built this
 
 Modern technical writing for developer-facing products requires more than explaining technical concepts clearly.
 
-Technical writers working with APIs increasingly need to understand how documentation connects with:
+As a technical writer, with this project, I demonstrated how documentation connects with:
 
 * API architecture
 * HTTP methods and status codes
@@ -279,9 +279,9 @@ Technical writers working with APIs increasingly need to understand how document
 * Version control
 * Documentation tooling
 
-This project was created to demonstrate those skills through a practical API documentation workflow using a real-world API.
+This project was created to show those skills through a practical API documentation workflow using a real-world API.
 
-## Final Deliverable
+## Final deliverable
 
 The completed OpenAPI specification provides a structured representation of the documented TMDB API with:
 
