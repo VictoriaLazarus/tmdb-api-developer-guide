@@ -19,7 +19,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -74,52 +74,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "b1dd463768c14e8eb4b6a65a5e53fb87"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"c955e57777ec0d73639dca6748560d00\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 5eaf2d59cfe709772e71a72f64052d16.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "o6VmYqHBldl7LgUZP41yTOq3OZN0b-COK9Kti-NuAkFuXd-mRLKQdg=="
                 }
               ],
               "cookie": [],
@@ -135,7 +99,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -208,18 +172,6 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "authentication-callback",
                   "value": "https://www.themoviedb.org/authenticate/ef56gh78ij90kl12mn34op56qr78st90ab12cd34"
                 },
@@ -228,36 +180,12 @@
                   "value": "us-east-1a"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "b1dd463768c14e8eb4b6a65a5e53fb87"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"156af8a29c13994721bb31dc881aad7a\""
-                },
-                {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 5eaf2d59cfe709772e71a72f64052d16.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "4n7b_Tl5XDWsNDyNh9P1udazLIJMWx9iuDQuhDSnqlHDRxk1GmVhIw=="
                 }
               ],
               "cookie": [],
@@ -273,7 +201,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -370,44 +298,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "ab3d313f8dfe4aa0a19d228e023b2cf7"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"aa801d19c35ac2a743c123c1c085b78d\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 5eaf2d59cfe709772e71a72f64052d16.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "cLUbhjtYOXlEldxU2O9Zk-V2ex0_qxPrnSaU15J1IQ8FDXoeIKgaFg=="
                 }
               ],
               "cookie": [],
@@ -426,7 +322,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -527,52 +423,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "0fd236ec28f745b8b45609ab55313d63"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"0b59676a176ad7efaab1af27d25cc357\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 5eaf2d59cfe709772e71a72f64052d16.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "g7HZUmoLp2bBSv0Z7XXStAGn09v43MGvgAmFN4CsDbgIj-n6yA---w=="
                 }
               ],
               "cookie": [],
@@ -588,7 +448,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -671,40 +531,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "ab3d313f8dfe4aa0a19d228e023b2cf7"
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Error from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 f99550af1fa4a9844f27aebbfee8248c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "lIW1aCdaa-dJksZEf4uDeb5ndwiIIIyPys1yr5Z_HasROII3Alzlww=="
                 }
               ],
               "cookie": [],
@@ -720,7 +552,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -813,44 +645,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "67fb649fed244a968d0c1eb34fb42757"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"67cbe71acbaee8a87672e3609b25e624\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 f99550af1fa4a9844f27aebbfee8248c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "W2pWllbSwL10xpVU3R43f8DEi1iAhlRADToAuP-sKlvZdN08dIj8xA=="
                 }
               ],
               "cookie": [],
@@ -866,7 +666,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -965,44 +765,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "e8da340f034f4cb48710a855edc4ec04"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"c955e57777ec0d73639dca6748560d00\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 d899a78dff2c87065b62c25ceb8ba904.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "8cKpblQKudw5THZnahX4ld9kbMyKZphc_NIYGSNKCvAlwaz-yZSDIQ=="
                 }
               ],
               "cookie": [],
@@ -1021,7 +789,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -1106,10 +874,6 @@
                   "value": 403
                 },
                 {
-                  "key": "server",
-                  "value": "CloudFront"
-                },
-                {
                   "key": "date",
                   "value": "Mon, 14 Sep 2026 11:58:54 GMT"
                 },
@@ -1122,24 +886,8 @@
                   "value": "915"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Error from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 3c0a3ce74d108f55f1f115025694b22c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "AC0Dih9cCPDJ3LT8jo7COc5Xq9zQ3xGT1xm70FT_I2CRuc2AY0GeJg=="
                 },
                 {
                   "key": "vary",
@@ -1168,7 +916,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -1259,52 +1007,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "db5a529ce11a4c688c4279d4b86a2a3d"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"9c32cfee93a7e3569de70ec53dac0a20\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 65b5a4add6e9de092ec77a19ccbe563e.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "zN-5TATjGD9sVwJAksrRYapQKF-M7aSP9W-MwTLwfGp2C0hWsHINLg=="
                 }
               ],
               "cookie": [],
@@ -1320,7 +1032,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -1413,44 +1125,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1b"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "8ea812e5fb6745aa9699b265a57486db"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"04302547257ccb7e68844cdd59055002\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 65b5a4add6e9de092ec77a19ccbe563e.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "sVjBMjKSLksoei8mKKtK4pSqT_D_iOiuwVO1RXPiGqrFLmpOnOkcgw=="
                 }
               ],
               "cookie": [],
@@ -1466,7 +1146,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -1549,52 +1229,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "db5a529ce11a4c688c4279d4b86a2a3d"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"c400477f5d3f29a147786d4c5fd956a9\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 65b5a4add6e9de092ec77a19ccbe563e.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "sw9wH9jUMon3WtKSwIWidaI50PJNdNi3y44xkR_BOqLGNqrsik15vg=="
                 }
               ],
               "cookie": [],
@@ -1610,7 +1254,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -1693,52 +1337,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1b"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "79bba4dd02fa4ef1bdfb41cf3896fca0"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"5b333525ff117973180331432dc740b8\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 65b5a4add6e9de092ec77a19ccbe563e.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "L3rmWALJSX0N5pVV62Mh0PRMqzvJZtvkQFmPVFID2BYZaF-1IwVTiA=="
                 }
               ],
               "cookie": [],
@@ -1754,7 +1362,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -1835,52 +1443,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "9dfe5f10236345ff9d1b676aa5c31479"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"5b333525ff117973180331432dc740b8\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 f6b1b2ef4038d1b4a38d654ffb4ba2d6.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "Myghd3_b4Zu5MbVBHnYllrhHD-NghveiLsJwex3cAWg1fWrPNqb2Hg=="
                 }
               ],
               "cookie": [],
@@ -1896,7 +1468,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -1979,52 +1551,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "9dfe5f10236345ff9d1b676aa5c31479"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"5b333525ff117973180331432dc740b8\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 f6b1b2ef4038d1b4a38d654ffb4ba2d6.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "w5AOASe8W8vBeaTFZCNln7Eie8U-5WT7UbNbIWO440TR4LWMi24M9Q=="
                 }
               ],
               "cookie": [],
@@ -2040,7 +1576,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -2123,52 +1659,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "37104cd55b7c47be839ad1532eaf46f6"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"5b333525ff117973180331432dc740b8\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 f6b1b2ef4038d1b4a38d654ffb4ba2d6.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "4oNRgmboUjaQs9XUDiErys3x2isyI5D27HdS7CagRdK9CnKIFDaQMg=="
                 }
               ],
               "cookie": [],
@@ -2184,7 +1684,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -2269,52 +1769,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1b"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "8ea812e5fb6745aa9699b265a57486db"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"5b333525ff117973180331432dc740b8\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 f6b1b2ef4038d1b4a38d654ffb4ba2d6.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "qBL4r-opiiGBVBxC5VfiDS1Kpb4H8V5KPy3GUEKGoQrFgkrMUCdFUA=="
                 }
               ],
               "cookie": [],
@@ -2330,7 +1794,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -2413,52 +1877,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1b"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "c67d28d56d59402e92fa73ff40f92c67"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"5b333525ff117973180331432dc740b8\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 f6b1b2ef4038d1b4a38d654ffb4ba2d6.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "1fFpu5t-GiWWEwkDiDW8ejgL2-EQkf8WPec1kB_LU5X72mlr4LKsvQ=="
                 }
               ],
               "cookie": [],
@@ -2474,7 +1902,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -2577,44 +2005,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1b"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "8ea812e5fb6745aa9699b265a57486db"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"4543905c5703940a323f39bb4fdcba82\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 f6b1b2ef4038d1b4a38d654ffb4ba2d6.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "rfpnh_EwHzd3arydJs2P4vBbmRxJxFS3QSCxoTkxmA8w7bOuiW5Yvw=="
                 }
               ],
               "cookie": [],
@@ -2630,7 +2026,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -2713,52 +2109,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "e8da340f034f4cb48710a855edc4ec04"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"5b333525ff117973180331432dc740b8\""
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 f6b1b2ef4038d1b4a38d654ffb4ba2d6.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "MuSPeUJmf-DCBL1oS_g52L4RzOEsZ9tIpRiV-KOWzKEJ1yz7kOg3pA=="
                 }
               ],
               "cookie": [],
@@ -2780,7 +2140,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -2855,52 +2215,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "db5a529ce11a4c688c4279d4b86a2a3d"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"fb2b05a57cabde713b997ab2f52184b7\""
-                },
-                {
-                  "key": "cache-control",
-                  "value": "max-age=0, private, must-revalidate"
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 0cffef5d52bc610783bf46dfead84a9c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "FtG67ozdohbLgivbgQ9vXJ-XFNdYlIc3_g9e6igqB0Pk90YbhyOBlA=="
                 }
               ],
               "cookie": [],
@@ -2916,7 +2240,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -2989,52 +2313,16 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1b"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "c23f2f2802e94d5db081de7a3417e835"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"38ab5641addbed4d598562dcd0dcce7e\""
-                },
-                {
-                  "key": "cache-control",
-                  "value": "max-age=0, private, must-revalidate"
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 0006591619059aff8fe8d2c7ac4986dc.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "2PvxZ2yZyktP4Qlbyvy2gTzhmgvZZxe5evzmdHaaJy8KSDcHf6h-NQ=="
                 }
               ],
               "cookie": [],
@@ -3056,7 +2344,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -3147,48 +2435,12 @@
                   "value": "us-east-1a"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "0fd236ec28f745b8b45609ab55313d63"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=9265"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"d7f7d51135bcc7ffad24d4049e2dbc65c03c04b5c9797bf602330e1d2b6485e2\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "AIbBjUTE8Wd_F7NS9u0xkYKqZC6Yb_OS0gvMOTDKq9wFpjni87z6Ng=="
                 },
                 {
                   "key": "vary",
@@ -3208,7 +2460,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -3293,48 +2545,12 @@
                   "value": "us-east-1b"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "c23f2f2802e94d5db081de7a3417e835"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=21525"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"4267599b79cd486e88dee0d75a7ccbb0c82a99e029b72eaf2ed7ea1b018707ec\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "-amfD_n9GgtRtItA3RCoN_fRmmrl6anP2MjlGd5FRGQFuVOeifqKTw=="
                 },
                 {
                   "key": "vary",
@@ -3354,7 +2570,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -3439,48 +2655,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=5558"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "ab3d313f8dfe4aa0a19d228e023b2cf7"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"f63ad6ebcb9c0f5e65c1a1c0be772f8a3be41d88e88cad65e36f99d60470d387\""
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "pNMouv5_sriLEWG9upOHFHHd9G3fX2MrXSBODH58mw50pwj5bqPuVw=="
                 },
                 {
                   "key": "vary",
@@ -3500,7 +2680,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -3593,48 +2773,12 @@
                   "value": "us-east-1a"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "37104cd55b7c47be839ad1532eaf46f6"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=4645"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"b0d17455830b8e5023b8ae1daed5c14e02069ff55a698fc897e84ade7e332a06\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "w5POD3HMqrYqeid4V5QWWjVWECcaeJBvJQ-DWt1G8Cy2tyDDl91o5A=="
                 },
                 {
                   "key": "vary",
@@ -3654,7 +2798,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -3757,18 +2901,6 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=25784"
-                },
-                {
                   "key": "x-memc",
                   "value": "MISS, STORE"
                 },
@@ -3789,36 +2921,12 @@
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "e8da340f034f4cb48710a855edc4ec04"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"56b28ad609cdd2b73c3f1106b2a096f5\""
-                },
-                {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "_bP12sxzvwi0ndwYUazK1IBVZJypAvlHgCfE9LfcdES1fgXF5HXtPQ=="
                 }
               ],
               "cookie": [],
@@ -3834,7 +2942,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -3937,18 +3045,6 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=27694"
-                },
-                {
                   "key": "x-memc",
                   "value": "MISS, STORE"
                 },
@@ -3969,36 +3065,12 @@
                   "value": "us-east-1a"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "0fd236ec28f745b8b45609ab55313d63"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"383556d49b50be219a96c3277cb7b6a9\""
-                },
-                {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "84RxdSTqlpQrSV19j6m1A1hjoitKs6TiEjRN6cmJvVt3yWnQfxm6Gw=="
                 }
               ],
               "cookie": [],
@@ -4014,7 +3086,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -4107,48 +3179,12 @@
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=7068"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"4637646c21b9c9614afaad50ab5a96e069526d8becc3ddb1ea921c68cd1cd808\""
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "03c86c66b1e14f5b9f5dffc075d976ad"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "JGa9XNkF-K6KG3EqolNC_cMuuSb2eTmsTxe3z-1fJuiyTsVJwpbvGA=="
                 },
                 {
                   "key": "vary",
@@ -4174,7 +3210,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -4317,48 +3353,12 @@
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=23535"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"d1a6cfafc2db6f969a310b0b5f983923\""
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "ab3d313f8dfe4aa0a19d228e023b2cf7"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "2O20NR5vSXK4MtZwejGGi0jdxWJqbei9kZf8kzKFldcg7DyBXU5FKg=="
                 },
                 {
                   "key": "vary",
@@ -4378,7 +3378,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -4533,18 +3533,6 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=23046"
-                },
-                {
                   "key": "x-memc",
                   "value": "HIT"
                 },
@@ -4561,40 +3549,16 @@
                   "value": "23046"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"36de2a9b1d5943d890498fd5cd3c15e359ac9181f518fa35cf54c35631178b91\""
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "9dfe5f10236345ff9d1b676aa5c31479"
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "TtptzrJ5EBcF8Ltr_3CvqrHWbgHXDZcpdqFLGOVdNHsOr-7EwXN5jw=="
                 }
               ],
               "cookie": [],
@@ -4616,7 +3580,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -4711,48 +3675,12 @@
                   "value": "us-east-1b"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=22329"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"f9208701bb3c6b48a1cb1092413d57143daed968060e814fc252220c638a435d\""
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "c23f2f2802e94d5db081de7a3417e835"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 1e1c4688b528078212a318a558458092.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "0vW7wmI99N8h3KaDUlQ_RG2Tfp_cwpOkN-G8ScL_nyuRyyN3x0UNIg=="
                 },
                 {
                   "key": "vary",
@@ -4772,7 +3700,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -4869,18 +3797,6 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=0"
-                },
-                {
                   "key": "x-memc",
                   "value": "MISS"
                 },
@@ -4901,36 +3817,12 @@
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "db5a529ce11a4c688c4279d4b86a2a3d"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"ff13025d69067a42ae297add1fec4bbd\""
-                },
-                {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "fqNpZq3-GkujDPkWxwp6XtIWX52orz1Gd0gnSn-bKkXlc9HlyOD1XQ=="
                 }
               ],
               "cookie": [],
@@ -4946,7 +3838,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -5021,48 +3913,12 @@
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=18233"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"7e3549cbe732866b077018d49476882b4cecdf157d4f26e4034b89a85e27daf6\""
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "03c86c66b1e14f5b9f5dffc075d976ad"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "kbhq-16w7Bn3vaSa049tYQOdaXROwoxFxp8B8i1pcdb656OP3ZMkhQ=="
                 },
                 {
                   "key": "vary",
@@ -5082,7 +3938,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -5155,22 +4011,6 @@
                   "value": "Mon, 14 Sep 2026 11:19:07 GMT"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"9838fd009118500807f3ab76811619e2\""
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=600"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
                 },
@@ -5179,28 +4019,8 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "e69e2fb58e624e2ebbe9b6c94a2380db"
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "PInXdeaW6fCKViGxYZomGiww1wWTw-Bemdz98G4QNwPQZPXJ5BuwCw=="
                 },
                 {
                   "key": "vary",
@@ -5220,7 +4040,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -5279,48 +4099,12 @@
                   "value": "us-east-1b"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "c23f2f2802e94d5db081de7a3417e835"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=14829"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"b58b5ad8f956486ea345b5e782811a796330332215491d1aafa013ae97909b71\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "r6Y7eXCpf9or4LKnq_ves9-ueqKYprSooPuExWVCSRN18V871FhwcQ=="
                 },
                 {
                   "key": "vary",
@@ -5340,7 +4124,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -5417,48 +4201,12 @@
                   "value": "us-east-1b"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=6684"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"1cabce683a25510b6eff7d27dc029898ea059b55058f333ab7fdbbcf44636be0\""
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "c23f2f2802e94d5db081de7a3417e835"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "6IzYbR8U2RoVjctc7f8oD_Uug-s5eBOBWTjnImz1TYOO5jYfLsztxw=="
                 },
                 {
                   "key": "vary",
@@ -5478,7 +4226,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -5537,48 +4285,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=13659"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "dcb2f4d9222241f2875e59740e3341ff"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"1c4194c3b639fb9c735fd6ffb8f3e426a58e379d4c11365be8389edd93b2dbb1\""
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1b"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "6V0YMnP-bGY0S95pp9gY3Flxi6nWLkRmXX1W30ggCE3y-vBL6K85sQ=="
                 },
                 {
                   "key": "vary",
@@ -5598,7 +4310,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -5653,22 +4365,6 @@
                   "value": "Mon, 14 Sep 2026 11:20:18 GMT"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"6e2a3a1ad24b3cbfd6e7bb9f10a53780f264c00d84a8499c04441317d526ee32\""
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=15851"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
                 },
@@ -5677,28 +4373,8 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "ab3d313f8dfe4aa0a19d228e023b2cf7"
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "ZQmtVCmTDqlYqt6uq_9SeLhUmpfXp9dpNFjM_XoohA4l2C9GxZXwVQ=="
                 },
                 {
                   "key": "vary",
@@ -5718,7 +4394,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -5775,18 +4451,6 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=0"
-                },
-                {
                   "key": "x-memc",
                   "value": "MISS"
                 },
@@ -5807,36 +4471,12 @@
                   "value": "us-east-1a"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "0fd236ec28f745b8b45609ab55313d63"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"b0c3c848d753282083fbad885e4f9ac5\""
-                },
-                {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "AWg4NouavWChuvzs2j1_TweZCbOCdK7_vtsBhJwfbD_5PJEzG_g5Wg=="
                 }
               ],
               "cookie": [],
@@ -5852,7 +4492,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -5911,18 +4551,6 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=20474"
-                },
-                {
                   "key": "x-memc",
                   "value": "HIT"
                 },
@@ -5939,40 +4567,16 @@
                   "value": "20474"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"34de942b72272b90f22c303cf103047b823b91f2f9294d2fe94e27b487fdd353\""
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "6e842cecc45848dfb4073e772547b1b9"
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "Wyi6x8Mcb4MOacGxdmhnXEoayoNaMGXBxqmgIXBAkCabHI4aOl_icQ=="
                 }
               ],
               "cookie": [],
@@ -5988,7 +4592,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -6047,48 +4651,12 @@
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "ab3d313f8dfe4aa0a19d228e023b2cf7"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=18191"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"96b2f0d6f3f530b157c5aa58199be501c99ed8e6737d5e8ff655b5b746b9a526\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "5KGYTdxdnyu1KDY_MCV5NWIsSn7Oyuw_MytWAb9UtgALsajcrErIbw=="
                 },
                 {
                   "key": "vary",
@@ -6108,7 +4676,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -6163,22 +4731,6 @@
                   "value": "Mon, 14 Sep 2026 11:21:27 GMT"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"4359da3efad1f526ef7ff097d1bf033676636cead7553b3a77f5bbd7068ee55a\""
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=13046"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
                 },
@@ -6187,28 +4739,8 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "6e842cecc45848dfb4073e772547b1b9"
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "7tKQLq3Lp8slv7Kb1I-Mlt9_svQ6Rq4lH7CCipzgABnpKJ5KfzQsnQ=="
                 },
                 {
                   "key": "vary",
@@ -6228,7 +4760,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -6287,48 +4819,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=9508"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "0fd236ec28f745b8b45609ab55313d63"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"40662a0cd3d4bfaebad9b400c04669d90c3738b3ba4bcd812616506664ce327e\""
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "mXGNZZGbcnst5B5AAMkC20b74EtvOusjtu8bMCxNrvt0Kt9ClxpLlw=="
                 },
                 {
                   "key": "vary",
@@ -6348,7 +4844,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -6403,22 +4899,6 @@
                   "value": "Mon, 14 Sep 2026 11:22:07 GMT"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"551ba88d1bf9b0f5db3098751987a298cb5d7c74d4ee26c7520a6d7a482a968d\""
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=19336"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1b"
                 },
@@ -6427,28 +4907,8 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "c67d28d56d59402e92fa73ff40f92c67"
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "KToXL7eD7zJ4j1iLYN_bCJ2yng6ywMejigLkWx8foHnkm9VtO4A8PA=="
                 },
                 {
                   "key": "vary",
@@ -6468,7 +4928,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -6523,22 +4983,6 @@
                   "value": "Mon, 14 Sep 2026 11:22:41 GMT"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"5e9ec313e23eb60e6f45d18dae667867cbdce31346e642664652c1927c16db89\""
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=10087"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
                 },
@@ -6547,28 +4991,8 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "6e842cecc45848dfb4073e772547b1b9"
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "MCKOjarcZNmH8cGLD-p_wvdRKb7CdA1_XDLqEPpM_SH_bf4VPCDaSg=="
                 },
                 {
                   "key": "vary",
@@ -6588,7 +5012,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -6643,22 +5067,6 @@
                   "value": "Mon, 14 Sep 2026 11:22:59 GMT"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"e64467f6f8f43cc67fef02e185d7b0fa10b4b2587f8a1c4353d31166362593ae\""
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=12417"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
                 },
@@ -6667,28 +5075,8 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "ab3d313f8dfe4aa0a19d228e023b2cf7"
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "a54LsNlS8HGXdW32cIOeGlJjlUx1pPwjrdqSsjtei2RMjTP8jRz4Hw=="
                 },
                 {
                   "key": "vary",
@@ -6708,7 +5096,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -6769,48 +5157,12 @@
                   "value": "us-east-1a"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "e69e2fb58e624e2ebbe9b6c94a2380db"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=16459"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"a2dcf4807a6a0af8de9f4190eeca1afb20749bf1dc7091a0faccc1ba39119f53\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "CBsrJFxIE9DuI-e3inUso_gfoqCfyq0GEaQb3OPja-eYxu17vZRS5Q=="
                 },
                 {
                   "key": "vary",
@@ -6830,7 +5182,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -6911,44 +5263,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1b"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "8ea812e5fb6745aa9699b265a57486db"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"4543905c5703940a323f39bb4fdcba82\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "u6t6B16KPyLdy8GZVZJ80EDFip6LXsScMOTGXtYfLV9EYrPGFoN77g=="
                 }
               ],
               "cookie": [],
@@ -6964,7 +5284,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -7027,44 +5347,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "private, max-age=0"
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1c"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "67fb649fed244a968d0c1eb34fb42757"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"0566f98871ddfd7f6ade28aaefb5167d\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 9e73f1456c9e4457db71fb095fe2497c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "jlPDsPADBvzU9wNw31432VkUkH_HX7hJyY8pswZqBebFK4XnRWnCiQ=="
                 }
               ],
               "cookie": [],
@@ -7086,7 +5374,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -7143,48 +5431,12 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=12780"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "79bba4dd02fa4ef1bdfb41cf3896fca0"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"1f394b368d29898eff0e9fb7a7a2f5694ec3e9d751ee003b54dea765256be224\""
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1b"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 0cffef5d52bc610783bf46dfead84a9c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "Cr25kachfgJe2ujasDynA9c3yiRWm-reHd4ZZUkokTEgxBlsuywLrA=="
                 },
                 {
                   "key": "vary",
@@ -7204,7 +5456,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{supabase_service_role_api_key_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -7263,18 +5515,6 @@
                   "value": "gzip"
                 },
                 {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "MISS"
-                },
-                {
-                  "key": "cache-control",
-                  "value": "public, max-age=16883"
-                },
-                {
                   "key": "x-memc",
                   "value": "HIT"
                 },
@@ -7291,40 +5531,16 @@
                   "value": "16883"
                 },
                 {
-                  "key": "etag",
-                  "value": "W/\"e389ed86e3b3780bff989dfcc2cf1c7e72cb4c30ec335fc710d7a7f10e9606d3\""
-                },
-                {
                   "key": "x-az",
                   "value": "us-east-1a"
-                },
-                {
-                  "key": "x-task-id",
-                  "value": "e69e2fb58e624e2ebbe9b6c94a2380db"
                 },
                 {
                   "key": "vary",
                   "value": "accept-encoding, Origin"
                 },
                 {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 0cffef5d52bc610783bf46dfead84a9c.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LIS50-P2"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "fpssNqNuJPiaAL_PzXpOExIHYG6msw9T_IWaO1wXkZsElot-9MV7NQ=="
                 }
               ],
               "cookie": [],
@@ -7340,7 +5556,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11k2}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -7395,52 +5611,16 @@
                   "value": "Mon, 14 Sep 2026 11:06:04 GMT"
                 },
                 {
-                  "key": "cache-control",
-                  "value": "public, max-age=10993"
-                },
-                {
                   "key": "content-encoding",
                   "value": "gzip"
-                },
-                {
-                  "key": "server",
-                  "value": "openresty"
-                },
-                {
-                  "key": "x-gateway-cache-status",
-                  "value": "HIT"
                 },
                 {
                   "key": "x-az",
                   "value": "us-east-1b"
                 },
                 {
-                  "key": "x-task-id",
-                  "value": "8ea812e5fb6745aa9699b265a57486db"
-                },
-                {
-                  "key": "etag",
-                  "value": "W/\"57562b64100cad02c73c2d093d1611f567308d592c9fffd5fed80df48499e4f2\""
-                },
-                {
-                  "key": "x-cache",
-                  "value": "Miss from cloudfront"
-                },
-                {
-                  "key": "via",
-                  "value": "1.1 adeedcba428a38c33b618e8bf3a606bc.cloudfront.net (CloudFront)"
-                },
-                {
-                  "key": "x-amz-cf-pop",
-                  "value": "LHR95-P3"
-                },
-                {
                   "key": "alt-svc",
                   "value": "h3=\":443\"; ma=86400"
-                },
-                {
-                  "key": "x-amz-cf-id",
-                  "value": "6UnZsngVFCkBh50GFVG6wDYSLdsqvPCme4DwR0iH18wgn87knNHOpw=="
                 },
                 {
                   "key": "vary",
@@ -7462,18 +5642,6 @@
     }
   ],
   "variable": [
-    {
-      "key": "supabase_service_role_api_key_11k2",
-      "secret": true
-    },
-    {
-      "key": "json_web_token_11k2",
-      "secret": true
-    },
-    {
-      "key": "auth_secret_11k2",
-      "secret": true
-    },
     {
       "key": "tmdb_api_key",
       "secret": true
