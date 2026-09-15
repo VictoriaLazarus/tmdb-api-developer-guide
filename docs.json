@@ -1,0 +1,11 @@
+{
+  "name": "TMDB API Developer Guide",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "API Reference",
+        "openapi": "openapi/tmdb-openapi.yaml"
+      }
+    ]
+  }
+}
