@@ -1,0 +1,104 @@
+---
+title: "Troubleshooting"
+description: "Fixes for the failures that come up most often when integrating TMDB."
+---
+
+<AccordionGroup>
+  <Accordion title="401 on every request" icon="key" defaultOpen>
+    **Possible causes**
+
+    - The API key or Bearer token is incorrect or has been revoked.
+    - The `Authorization` header is missing, or does not use the `Bearer ` prefix.
+    - A trailing space or newline was copied with the token.
+    - The request was sent to a different API version than the credential belongs to.
+
+    **How to fix it**
+
+    - Confirm the credential in your [TMDB API settings](https://www.themoviedb.org/settings/api).
+    - Check the header reads `Authorization: Bearer <token>` exactly.
+    - Call `GET /authentication/validate_key` in isolation to verify the credential before debugging anything else.
+  </Accordion>
+
+  <Accordion title="401 when creating a session" icon="user-lock">
+    **Possible causes**
+
+    - The request token was never approved by the user.
+    - The request token expired before it was exchanged.
+    - The request token was already exchanged for a session.
+
+    **How to fix it**
+
+    - Generate a fresh request token.
+    - Complete the browser approval step, or validate with `validate_with_login`.
+    - Exchange the token promptly, and store the resulting `session_id` for reuse.
+  </Accordion>
+
+  <Accordion title="401 on an account endpoint that works elsewhere" icon="user">
+    **Possible causes**
+
+    - Only the Bearer token was sent; no `session_id` was supplied.
+    - The session was deleted, or belongs to a different account than the `account_id` in the path.
+
+    **How to fix it**
+
+    - Add `session_id` as a query parameter alongside the Bearer token.
+    - Confirm the `account_id` belongs to the user who created the session.
+  </Accordion>
+
+  <Accordion title="404 Not found" icon="magnifying-glass">
+    **Possible causes**
+
+    - The resource ID does not exist, or belongs to a different resource type, such as a TV ID used on a movie endpoint.
+    - The path is misspelled, or a path variable resolved to an empty value.
+    - The resource was removed from TMDB.
+
+    **How to fix it**
+
+    - Verify the ID with a search or discover request first.
+    - Print the fully resolved URL and check that every variable was substituted.
+    - Confirm the endpoint path against the [API reference](/api-reference).
+  </Accordion>
+
+  <Accordion title="400 Validation failed" icon="triangle-exclamation">
+    **Possible causes**
+
+    - A required query parameter, such as `query` on a search endpoint, is missing or empty.
+    - A value is outside its allowed range, such as a rating that is not between `0.5` and `10.0` in `0.5` steps.
+    - A date filter is not formatted as `YYYY-MM-DD`.
+    - A comma or pipe separated filter contains an empty value.
+
+    **How to fix it**
+
+    - URL-encode search terms so spaces and punctuation survive the request.
+    - Check the parameter constraints on the endpoint page before retrying.
+  </Accordion>
+
+  <Accordion title="Empty results with a 200 response" icon="circle-info">
+    **Possible causes**
+
+    - The search term is misspelled, or too specific.
+    - A `language` or `region` filter excluded every match.
+    - Discover filters were combined with `,` (AND) where `|` (OR) was intended.
+
+    **How to fix it**
+
+    - Retry with fewer filters, then add them back one at a time.
+    - Try the original-language title as well as the translated one.
+  </Accordion>
+
+  <Accordion title="429 Too many requests" icon="clock">
+    **Possible causes**
+
+    - Requests were sent in a tight loop, often while paginating.
+
+    **How to fix it**
+
+    - Retry after a short delay with exponential backoff.
+    - Cache responses that rarely change, such as certifications and configuration data.
+    - Request only the pages you need instead of walking every page of a result set.
+  </Accordion>
+</AccordionGroup>
+
+## Still stuck
+
+Reproduce the call with `curl` and the `-i` flag so you can see the status line and headers, then compare it field by field with the request on the endpoint page. If the response body carries a `status_code`, look it up in [TMDB status codes](/errors/status-codes).

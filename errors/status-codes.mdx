@@ -1,0 +1,44 @@
+---
+title: "TMDB status codes"
+description: "The status codes returned in the response body, observed while testing this collection."
+---
+
+The `status_code` field in an error body identifies the exact failure. The codes below were returned by the endpoints documented in this guide.
+
+| `status_code` | HTTP | `status_message` | What it means |
+| --- | --- | --- | --- |
+| `1` | `200` | Success. | The request completed successfully. |
+| `3` | `401` | Authentication failed: You do not have permissions to access the service. | The credential is missing, malformed, or not permitted for this resource. |
+| `7` | `401` | Invalid API key: You must be granted a valid key. | The API key or Bearer token is wrong, revoked, or absent. |
+| `18` | `400` | Validation failed. | A parameter value failed validation, such as a rating outside `0.5`–`10.0`. |
+| `30` | `401` | Invalid username and/or password. | The TMDB credentials sent to `validate_with_login` are wrong. |
+| `33` | `401` | Invalid request token. | The request token expired, was never approved, or was already exchanged. |
+| `34` | `404` | The resource you requested could not be found. | No movie, network, account, or list matches the supplied ID. |
+| `36` | `401` | This token hasn't been granted write permission by the user. | A v4 token was sent without user-granted write access. |
+
+<Note>
+TMDB defines more status codes than the ones listed here. This table covers the codes reproduced while testing the 52 endpoints in this guide; the complete list is maintained in the [TMDB developer portal](https://developer.themoviedb.org/docs/errors).
+</Note>
+
+## Handling codes in code
+
+```javascript
+const response = await fetch(url, {
+  headers: { Authorization: `Bearer ${accessToken}` },
+});
+const body = await response.json();
+
+if (!response.ok) {
+  switch (body.status_code) {
+    case 7:
+    case 3:
+      throw new Error("Check your TMDB credentials.");
+    case 33:
+      return refreshRequestToken();
+    case 34:
+      return null; // resource genuinely does not exist
+    default:
+      throw new Error(`TMDB error ${body.status_code}: ${body.status_message}`);
+  }
+}
+```

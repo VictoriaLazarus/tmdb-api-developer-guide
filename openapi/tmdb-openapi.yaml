@@ -50,15 +50,10 @@ paths:
 
         ## Common use cases
 
-        - Verify API credentials during application setup.
         - Confirm that an API key or access token is valid.
         - Test API connectivity before making authenticated requests.
         - Troubleshoot authentication or configuration issues.
         - Validate credentials in automated deployment or CI/CD pipelines before running API-dependent tasks.
-
-        ## Notes
-
-        This endpoint only validates your API credentials. It does not create a user session or authenticate a TMDB user account.
       operationId: validateApiKey
       security:
       - BearerAuth: []
@@ -5818,14 +5813,7 @@ paths:
         - End an authenticated session after account operations are complete.
         - Invalidate sessions that are no longer needed.
         - Improve application security by preventing reuse of an active session.
-        - Support logout functionality across web and mobile applications.
-
-        ## Notes
-
-        - Deleting a session immediately invalidates the associated `session_id`.
-        - Once deleted, the session cannot be restored or reused.
-        - To access authenticated endpoints again, you must complete the authentication workflow and create a new session.
-        - Deleting a session signs the user out of your application but does not revoke the user's TMDB account or API credentials.
+        - Support logout functionality across web and mobile applications.        
       operationId: deleteSession
       security:
       - BearerAuth: []

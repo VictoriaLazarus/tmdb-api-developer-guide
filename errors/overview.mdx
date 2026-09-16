@@ -1,0 +1,57 @@
+---
+title: "How errors work"
+description: "The shape of a TMDB error, and what each HTTP status means."
+---
+
+TMDB signals failure in two places at once: the HTTP status code, and a TMDB status code inside the response body. The body is the more specific of the two, and it is what you should log.
+
+## The error object
+
+Every failed request returns the same JSON shape:
+
+```json 401 Unauthorized
+{
+  "success": false,
+  "status_code": 7,
+  "status_message": "Invalid API key: You must be granted a valid key."
+}
+```
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `success` | boolean | Always `false` on a failed request. |
+| `status_code` | integer | TMDB status code identifying the exact failure. |
+| `status_message` | string | Human-readable explanation of the failure. |
+
+<Tip>
+Branch your error handling on `status_code`, not on `status_message`. Messages are written for humans and can change; the codes are stable.
+</Tip>
+
+## HTTP status codes
+
+| Status | Meaning | Typical cause |
+| --- | --- | --- |
+| `200` | Success | The request completed. |
+| `400` | Bad request | A parameter is missing, malformed, or out of range. |
+| `401` | Unauthorized | Credentials, request token, or session are invalid. |
+| `403` | Forbidden | The credentials are valid but not permitted to do this. |
+| `404` | Not found | No resource matches the supplied ID or path. |
+| `429` | Too many requests | You exceeded the rate limit. Retry after a short delay. |
+| `500` | Server error | A problem on the TMDB side. Retry with backoff. |
+
+<Note>
+A `200` response does not always mean a match was found. A search that matches nothing still returns `200` with `total_results` set to `0` and an empty `results` array. Check the payload, not only the status code.
+</Note>
+
+## Where to look next
+
+<CardGroup cols={2}>
+  <Card title="TMDB status codes" icon="list" href="/errors/status-codes">
+    The codes you will see in the body, and what each one means.
+  </Card>
+  <Card title="Troubleshooting" icon="wrench" href="/errors/troubleshooting">
+    Fixes for the failures that come up most often in practice.
+  </Card>
+</CardGroup>
+
+Each endpoint also documents its own errors. Open the status tabs on any endpoint page in the [API reference](/api-reference) to see the causes and fixes for that specific call.

@@ -1,0 +1,28 @@
+---
+title: "Changelog"
+description: "Notable changes to this documentation."
+---
+
+<Update label="2026-09-16" description="Structure and reference cleanup">
+  **Changed**
+
+  - Moved every request and response example out of endpoint descriptions. The reference panel renders them from the specification, so they are no longer duplicated in prose.
+  - Documented all 304 response fields on the schema itself, so field descriptions appear inline in the response panel.
+  - Documented all 191 parameters on the parameter objects rather than in markdown tables.
+  - Attached error causes and fixes to the status code that returns them, so guidance appears in the response tab for that error.
+
+  **Added**
+
+  - Overview, Getting started, Authentication, Errors, and Changelog sections in the top navigation.
+  - A dedicated [Errors](/errors/overview) section covering the error object, TMDB status codes, and troubleshooting.
+  - Group descriptions for Authentication, Account, Search, Discover, Movies, Networks, and Certifications.
+</Update>
+
+<Update label="2026-09-01" description="Initial release">
+  **Added**
+
+  - 52 documented TMDB endpoints across seven groups, each tested against the live API.
+  - The v3 authentication workflow, from request token to session ID.
+  - Guest session support for ratings without a TMDB account.
+  - Per-endpoint use cases, prerequisites, and implementation notes.
+</Update>

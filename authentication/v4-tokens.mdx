@@ -1,0 +1,41 @@
+---
+title: "v4 access tokens"
+description: "OAuth-style user authorization, and how to convert a v4 token into a v3 session."
+---
+
+API v4 replaces session-based authentication with user-authorized access tokens. A user explicitly grants your application permission to act on their account, similar to an [OAuth](https://oauth.net/2/access-tokens/) flow.
+
+## When to use v4
+
+- You want explicit, revocable user consent.
+- You are building a multi-user application where each user authorizes independently.
+- You need a token that the user can revoke from their TMDB account settings.
+
+Because many user-specific endpoints still require a v3 session, the common pattern is to authorize with v4 and then convert.
+
+## Convert a v4 token into a v3 session
+
+```bash
+curl --request POST \
+  --url "https://api.themoviedb.org/3/authentication/session/convert/4" \
+  --header "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{"access_token": "USER_AUTHORIZED_V4_ACCESS_TOKEN"}'
+```
+
+The response returns a `session_id` you can use on any v3 endpoint that requires one.
+
+<Warning>
+The value you send must be a **user-authorized v4 access token**, not your API Read Access Token. Sending the Read Access Token returns `401` with status code `36`: the token has not been granted write permission by the user.
+</Warning>
+
+## Common failures
+
+<AccordionGroup>
+  <Accordion title="Status code 36: token has not been granted write permission">
+    The user authorized the token without write access, or you sent an application token instead of a user token. Create a new v4 request token, have the user approve it with write permission, then exchange it for an access token.
+  </Accordion>
+  <Accordion title="The conversion succeeds but account endpoints still fail">
+    Confirm you are sending the returned `session_id` as a query parameter and that the account ID belongs to the same user who authorized the token.
+  </Accordion>
+</AccordionGroup>

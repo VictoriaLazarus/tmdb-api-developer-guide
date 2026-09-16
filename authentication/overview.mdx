@@ -1,0 +1,70 @@
+---
+title: "Authentication overview"
+description: "The three ways to authenticate a TMDB request, and when each one applies."
+---
+
+Every TMDB request must identify your application. Some requests must also identify a **user**.
+
+## The three levels
+
+<CardGroup cols={3}>
+  <Card title="Application" icon="key">
+    A Bearer token or API key. Enough for public data: search, discover, movie details, networks, certifications.
+  </Card>
+  <Card title="User session" icon="user">
+    A v3 session ID created from an approved request token. Required for account data and user ratings.
+  </Card>
+  <Card title="Guest session" icon="user-clock">
+    A temporary session that can rate titles without a TMDB account. Expires after a period of inactivity.
+  </Card>
+</CardGroup>
+
+## Which endpoints need what
+
+| Endpoint group | Application credential | Session ID |
+| --- | --- | --- |
+| Search, Discover, Movies (read), Networks, Certifications | Required | Not used |
+| Account details, favorites, watchlist, rated items, lists | Required | Required |
+| Create or delete a movie rating | Required | Session ID **or** guest session ID |
+| Authentication endpoints | Required | Not used |
+
+## How credentials are sent
+
+<CodeGroup>
+
+```bash Bearer token (recommended)
+curl --request GET \
+  --url "https://api.themoviedb.org/3/movie/550" \
+  --header "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+```bash API key
+curl --request GET \
+  --url "https://api.themoviedb.org/3/movie/550?api_key=YOUR_API_KEY"
+```
+
+```bash With a session
+curl --request GET \
+  --url "https://api.themoviedb.org/3/account/YOUR_ACCOUNT_ID?session_id=YOUR_SESSION_ID" \
+  --header "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+</CodeGroup>
+
+<Note>
+A Bearer token authenticates your **application**, not a user. Sending a valid Bearer token to an account endpoint without a `session_id` still fails.
+</Note>
+
+## Choose a flow
+
+<CardGroup cols={3}>
+  <Card title="v3 session" icon="arrow-right" href="/authentication/v3-session-flow">
+    The standard four-step user authentication workflow.
+  </Card>
+  <Card title="Guest session" icon="arrow-right" href="/authentication/guest-sessions">
+    Rate titles without asking the user to sign in.
+  </Card>
+  <Card title="v4 access token" icon="arrow-right" href="/authentication/v4-tokens">
+    OAuth-style authorization, converted to a v3 session.
+  </Card>
+</CardGroup>

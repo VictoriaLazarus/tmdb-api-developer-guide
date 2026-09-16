@@ -1,0 +1,46 @@
+---
+title: "About this documentation"
+description: "Scope, method, and editorial decisions behind this guide."
+---
+
+## Scope
+
+This guide documents and tests 52 TMDB API endpoints across authentication, account, search, discover, movies, networks, and certifications.
+
+Beyond demonstrating successful requests, it covers parameter behaviour, authentication requirements, practical use cases, error responses, and troubleshooting guidance drawn from real testing during implementation.
+
+## Method
+
+Every endpoint in this guide was called against the live TMDB API. Response schemas were written from observed responses, and each documented error was reproduced before it was written up. Where an error message differs from what the status code suggests, the endpoint page says so.
+
+## How the reference is structured
+
+<AccordionGroup>
+  <Accordion title="Descriptions explain, they do not duplicate">
+    Each endpoint description covers what the endpoint does, what you need before calling it, and when to use it. Request and response examples are not repeated in prose because the reference panel renders them from the specification.
+  </Accordion>
+  <Accordion title="Field documentation lives on the schema">
+    Every response field is documented on the schema itself, so descriptions appear inline next to the field in the response panel rather than in a separate table.
+  </Accordion>
+  <Accordion title="Errors sit with the response they describe">
+    Causes and fixes are attached to the status code that returns them. Open the error tab on any endpoint to see the guidance for that specific failure.
+  </Accordion>
+  <Accordion title="Shared guidance is centralised">
+    Error behaviour common to every endpoint lives in [Errors](/errors/overview) instead of being repeated 52 times.
+  </Accordion>
+</AccordionGroup>
+
+## Conventions
+
+| Convention | Meaning |
+| --- | --- |
+| `{variable}` | A path parameter you replace, such as `{movie_id}` |
+| `{{variable}}` | An environment variable stored in your API client |
+| **Required** | The request fails without this value |
+| Session ID | A v3 session created through the authentication workflow |
+
+## Out of scope
+
+- TV season and episode endpoints.
+- The full v4 list management API.
+- Image delivery and sizing beyond the configuration values needed to build an image URL.

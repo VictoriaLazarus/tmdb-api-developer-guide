@@ -1,0 +1,95 @@
+---
+title: "Your first request"
+description: "Call a live TMDB endpoint and understand what comes back."
+---
+
+The fastest way to confirm your setup works is to retrieve a single movie. Movie ID `550` is *Fight Club*.
+
+## Send the request
+
+<CodeGroup>
+
+```bash cURL
+curl --request GET \
+  --url "https://api.themoviedb.org/3/movie/550" \
+  --header "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+```javascript JavaScript
+const response = await fetch("https://api.themoviedb.org/3/movie/550", {
+  headers: { Authorization: "Bearer YOUR_ACCESS_TOKEN" },
+});
+const movie = await response.json();
+console.log(movie);
+```
+
+```python Python
+import requests
+
+response = requests.get(
+    "https://api.themoviedb.org/3/movie/550",
+    headers={"Authorization": "Bearer YOUR_ACCESS_TOKEN"},
+)
+print(response.json())
+```
+
+</CodeGroup>
+
+## Read the response
+
+```json 200 OK
+{
+  "adult": false,
+  "id": 550,
+  "title": "Fight Club",
+  "original_language": "en",
+  "overview": "A ticking-time-bomb insomniac and a soap salesman channel primal male aggression into a shocking new form of therapy.",
+  "release_date": "1999-10-15",
+  "runtime": 139,
+  "vote_average": 8.4,
+  "vote_count": 30000,
+  "genres": [{ "id": 18, "name": "Drama" }]
+}
+```
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `adult` | boolean | Whether the movie contains adult content. |
+| `id` | integer | Unique TMDB identifier for the movie. |
+| `title` | string | Movie title. |
+| `original_language` | string | Original language of the movie. |
+| `overview` | string | Brief summary of the movie. |
+| `release_date` | string | Official release date. |
+| `runtime` | integer | Duration in minutes. |
+| `vote_average` | number | Average user rating, from 0 to 10. |
+| `vote_count` | integer | Number of user ratings submitted. |
+| `genres` | array | Genres associated with the movie. |
+
+<Check>
+A `200` response means your credentials work. If you get a `401`, see [Troubleshooting](/errors/troubleshooting).
+</Check>
+
+## Build an image URL
+
+Image fields such as `poster_path` return a relative path, not a full URL. Combine the base URL, a size, and the path:
+
+```
+https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg
+```
+
+## What next
+
+<CardGroup cols={2}>
+  <Card title="Search for a title" icon="magnifying-glass" href="/api-reference">
+    Find movies, TV shows, and people by name.
+  </Card>
+  <Card title="Browse with filters" icon="sliders" href="/api-reference">
+    Use Discover to filter by genre, rating, provider, and release window.
+  </Card>
+  <Card title="Authenticate a user" icon="user-check" href="/authentication/v3-session-flow">
+    Create a session and reach favorites, ratings, and watchlists.
+  </Card>
+  <Card title="Handle errors" icon="triangle-exclamation" href="/errors/overview">
+    Know what each status code means before you ship.
+  </Card>
+</CardGroup>

@@ -1,0 +1,71 @@
+---
+title: "Environment variables"
+description: "Store credentials and reusable values so requests stay portable."
+---
+
+An environment variable is a placeholder for a value that changes or is reused across requests. Storing your credentials this way means you do not hardcode them into every call, and when a value changes you update it in one place.
+
+## Variables used in this guide
+
+<AccordionGroup>
+  <Accordion title="Core variables" defaultOpen>
+    | Variable | Value |
+    | --- | --- |
+    | `{{base_url}}` | `https://api.themoviedb.org/3` |
+    | `{{image_base_url}}` | Base URL for image assets |
+  </Accordion>
+  <Accordion title="Authentication variables">
+    | Variable | Value |
+    | --- | --- |
+    | `{{access_token}}` | Your API Read Access Token |
+    | `{{api_key}}` | Your API key, if you authenticate by query parameter |
+    | `{{session_id}}` | The v3 session ID used by account endpoints |
+    | `{{guest_session_id}}` | The guest session ID used for guest ratings |
+  </Accordion>
+  <Accordion title="Resource variables">
+    | Variable | Value |
+    | --- | --- |
+    | `{{movie_id}}` | Default movie identifier used for testing |
+    | `{{tv_id}}` | Default TV show identifier |
+    | `{{person_id}}` | Default person identifier |
+  </Accordion>
+  <Accordion title="Optional variables">
+    | Variable | Value |
+    | --- | --- |
+    | `{{page}}` | Pagination control |
+    | `{{language}}` | Response language, such as `en-US` |
+  </Accordion>
+</AccordionGroup>
+
+## Sending your credentials
+
+<CodeGroup>
+
+```bash Bearer token
+curl --request GET \
+  --url "https://api.themoviedb.org/3/movie/550" \
+  --header "Authorization: Bearer $TMDB_ACCESS_TOKEN"
+```
+
+```bash API key
+curl --request GET \
+  --url "https://api.themoviedb.org/3/movie/550?api_key=$TMDB_API_KEY"
+```
+
+</CodeGroup>
+
+<Tip>
+Keep secrets in a `.env` file that is listed in `.gitignore`, and load them at runtime. In an API client such as Postman or Insomnia, store them as environment variables of type **secret** so they are masked in shared workspaces.
+</Tip>
+
+## Base URL
+
+Every request in this guide is made against the v3 API:
+
+```
+https://api.themoviedb.org/3
+```
+
+<Card title="Next: make your first request" icon="arrow-right" href="/getting-started/first-request">
+  Call a live endpoint and read the response.
+</Card>

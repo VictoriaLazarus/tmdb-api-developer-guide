@@ -1,0 +1,95 @@
+---
+title: "v3 session flow"
+description: "Turn a request token into a session ID that can act on behalf of a user."
+---
+
+A session ID is what lets your application read and modify a user's TMDB data. Creating one takes four steps.
+
+<Steps>
+  <Step title="Validate your credentials">
+    Confirm your Bearer token or API key is recognised before anything else.
+
+    ```bash
+    curl --request GET \
+      --url "https://api.themoviedb.org/3/authentication/validate_key" \
+      --header "Authorization: Bearer YOUR_ACCESS_TOKEN"
+    ```
+
+    A `success` value of `true` means you are ready to continue.
+  </Step>
+
+  <Step title="Create a request token">
+    A request token is a short-lived token that the user approves.
+
+    ```bash
+    curl --request GET \
+      --url "https://api.themoviedb.org/3/authentication/token/new" \
+      --header "Authorization: Bearer YOUR_ACCESS_TOKEN"
+    ```
+
+    Keep the `request_token` and the `expires_at` value from the response.
+  </Step>
+
+  <Step title="Ask the user to approve the token">
+    Send the user to the TMDB approval page, replacing the placeholder with your token:
+
+    ```
+    https://www.themoviedb.org/authenticate/REQUEST_TOKEN
+    ```
+
+    The user signs in if prompted and selects **Approve**. If your application has a callback URL, append `?redirect_to=https://your-app.example.com/callback` so the user returns to you after approving.
+
+    <Warning>
+    A request token that has not been approved cannot be exchanged for a session. This is the single most common cause of a `401` at the next step.
+    </Warning>
+  </Step>
+
+  <Step title="Exchange the token for a session ID">
+    ```bash
+    curl --request POST \
+      --url "https://api.themoviedb.org/3/authentication/session/new" \
+      --header "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+      --header "Content-Type: application/json" \
+      --data '{"request_token": "APPROVED_REQUEST_TOKEN"}'
+    ```
+
+    Store the returned `session_id`. It does not expire on a timer, so persist it with the user's profile and reuse it.
+  </Step>
+</Steps>
+
+## Approve in a browser, or sign in directly
+
+| Approach | How it works | When to use it |
+| --- | --- | --- |
+| Browser approval | The user approves the token on themoviedb.org | Public-facing applications. The user never shares their password with you. |
+| `validate_with_login` | You submit the user's TMDB username and password to validate the token | Trusted internal tools and testing only |
+
+<Warning>
+`validate_with_login` requires your application to handle the user's TMDB password. Prefer browser approval for anything a third party will use.
+</Warning>
+
+## After you have a session
+
+Pass `session_id` as a query parameter alongside your Bearer token:
+
+```bash
+curl --request GET \
+  --url "https://api.themoviedb.org/3/account/ACCOUNT_ID/favorite/movies?session_id=YOUR_SESSION_ID" \
+  --header "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+To sign a user out, delete the session with `DELETE /authentication/session`.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="401 Invalid request token">
+    The token expired, was never approved, or has already been exchanged. Generate a new one and complete the approval step before calling `session/new`.
+  </Accordion>
+  <Accordion title="401 on an account endpoint with a valid token">
+    The Bearer token authenticates the application only. Add the `session_id` query parameter.
+  </Accordion>
+  <Accordion title="The user approved, but nothing happened">
+    Approval does not notify your application. Call `session/new` yourself after the user returns, or use a `redirect_to` URL to trigger it.
+  </Accordion>
+</AccordionGroup>

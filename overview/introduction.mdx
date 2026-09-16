@@ -1,0 +1,67 @@
+---
+title: "Introduction"
+description: "What the TMDB API does, how it is organised, and what this guide covers."
+---
+
+The Movie Database (TMDB) API is a RESTful web service that gives you access to movie, television, person, and account data. You can use it to search for content, retrieve metadata, manage watchlists, rate media, and build personalised entertainment applications.
+
+The API follows [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) conventions: predictable resource-oriented URLs, JSON request bodies, [JSON-encoded](http://www.json.org/) responses, and standard HTTP methods such as `GET`, `POST`, and `DELETE`.
+
+<CardGroup cols={2}>
+  <Card title="Get set up" icon="key" href="/getting-started/prerequisites">
+    Create a TMDB account, get your credentials, and make your first call.
+  </Card>
+  <Card title="Authenticate a user" icon="user-check" href="/authentication/overview">
+    Exchange a request token for a session ID and unlock account endpoints.
+  </Card>
+  <Card title="Browse the endpoints" icon="code" href="/api-reference">
+    52 documented endpoints with live parameters, responses, and a playground.
+  </Card>
+  <Card title="Handle failures" icon="triangle-exclamation" href="/errors/overview">
+    Status codes, TMDB error codes, and fixes for the failures you will actually hit.
+  </Card>
+</CardGroup>
+
+## Base URL
+
+All requests in this guide are made against the TMDB v3 API:
+
+```
+https://api.themoviedb.org/3
+```
+
+## What this guide covers
+
+This guide documents 52 TMDB endpoints across seven groups.
+
+| Group | Endpoints | What it does |
+| --- | --- | --- |
+| [Authentication](/api-reference) | 8 | Request tokens, user sessions, and guest sessions |
+| [Account](/api-reference) | 11 | Account details, favorites, watchlists, ratings, and lists |
+| [Search](/api-reference) | 7 | Text search across movies, TV, people, collections, and keywords |
+| [Discover](/api-reference) | 2 | Filtered and sorted browsing without a search term |
+| [Movies](/api-reference) | 19 | Details, credits, images, videos, reviews, providers, and ratings |
+| [Networks](/api-reference) | 3 | Television network details, images, and alternative names |
+| [Certifications](/api-reference) | 2 | Movie and TV content rating systems by country |
+
+Every endpoint page includes the parameters, the schema of each field in the response, a runnable request, and the errors that endpoint returns along with how to resolve them.
+
+## How to read an endpoint page
+
+<Steps>
+  <Step title="Read the summary and use cases">
+    The top of each page explains what the endpoint does and when you would reach for it.
+  </Step>
+  <Step title="Check authorization">
+    The **Authorizations** panel shows whether the endpoint accepts a Bearer token, an API key, or requires a session ID.
+  </Step>
+  <Step title="Fill in parameters and send">
+    Use the playground on the right to send a real request and inspect the live response.
+  </Step>
+  <Step title="Expand the response schema">
+    Every field is documented inline, so you can see what a value means without leaving the page.
+  </Step>
+  <Step title="Open the error tabs">
+    Each error status lists its likely causes and the fix, specific to that endpoint.
+  </Step>
+</Steps>

@@ -1,0 +1,45 @@
+---
+title: "Guest sessions"
+description: "Let users rate titles without signing in to TMDB."
+---
+
+A guest session gives an anonymous user a temporary identity. It is designed for one job: submitting ratings without a TMDB account.
+
+## Create one
+
+```bash
+curl --request GET \
+  --url "https://api.themoviedb.org/3/authentication/guest_session/new" \
+  --header "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+The response returns a `guest_session_id` and an `expires_at` timestamp.
+
+## Guest session compared with a user session
+
+| | Guest session | User session |
+| --- | --- | --- |
+| Requires a TMDB account | No | Yes |
+| Rate a movie | Yes | Yes |
+| Read account details, favorites, watchlist | No | Yes |
+| Ratings persist to a profile | No | Yes |
+| Expires | Yes, after a period of inactivity | No fixed expiry |
+| Parameter name | `guest_session_id` | `session_id` |
+
+## Submit a guest rating
+
+```bash
+curl --request POST \
+  --url "https://api.themoviedb.org/3/movie/550/rating?guest_session_id=YOUR_GUEST_SESSION_ID" \
+  --header "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{"value": 8.5}'
+```
+
+<Note>
+Ratings must be between `0.5` and `10.0` in increments of `0.5`. A value such as `4.3` or `11` is rejected.
+</Note>
+
+<Warning>
+Each guest session is refreshed by activity and expires when it goes unused. Store the `expires_at` value and create a new session when it passes, rather than waiting for a failed rating.
+</Warning>

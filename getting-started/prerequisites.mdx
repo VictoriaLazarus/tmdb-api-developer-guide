@@ -1,0 +1,51 @@
+---
+title: "Prerequisites"
+description: "Create a TMDB account and get the credentials you need to call the API."
+---
+
+To follow this guide you need:
+
+- A TMDB account.
+- A valid TMDB API Read Access Token (Bearer token).
+- A configured environment with the required variables.
+- A v3 session ID for endpoints that perform authenticated user actions, such as ratings and account states.
+
+If you do not have an account yet, the steps below get you from zero to credentials.
+
+## Create a TMDB account
+
+<Steps>
+  <Step title="Sign up">
+    Go to the [TMDB signup page](https://www.themoviedb.org/signup) and select **Join TMDB**.
+
+    <img src="https://content.pstmn.io/40eec610-97ce-4d7f-8e3a-1f2351838ec4/RnJhbWUgMTE2ODcucG5n" />
+  </Step>
+  <Step title="Verify your email">
+    TMDB sends a verification link. Confirm it, then sign in with your username and password.
+  </Step>
+  <Step title="Request API access">
+    Open **Settings**, select **API** in the left-hand menu, and complete the API access form.
+  </Step>
+  <Step title="Copy your credentials">
+    Scroll to **API Read Access Token** and **API Key** and copy both values.
+
+    <img src="https://content.pstmn.io/8f8a600f-fac0-433f-8a9f-977464f00e5f/RnJhbWUgMTE2OTEucG5n" />
+  </Step>
+</Steps>
+
+## Which credential do you need
+
+Both credentials authenticate a request, but they work differently.
+
+| Credential | How it is sent | Use it for |
+| --- | --- | --- |
+| API Read Access Token | `Authorization: Bearer <token>` header | The recommended default for all requests in this guide |
+| API Key | `api_key` query parameter | An alternative when a client cannot set headers |
+
+<Warning>
+Treat both values as secrets. Do not commit them to source control or ship them in client-side code where a user can read them. For browser and mobile apps, proxy TMDB calls through a backend you control.
+</Warning>
+
+<Card title="Next: store your credentials" icon="arrow-right" href="/getting-started/environment">
+  Set up environment variables so you never hardcode a token in a request.
+</Card>
