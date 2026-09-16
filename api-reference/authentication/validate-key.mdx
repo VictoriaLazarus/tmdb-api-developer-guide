@@ -1,28 +1,38 @@
----
-title: "Validate key"
-openapi: "/openapi/tmdb-openapi.yaml GET /authentication/validate_key"
----
+Validates TMDB API credentials using an API key or Bearer token.
 
-Validates your TMDB API credentials by confirming that the supplied API key or access token is recognized and authorized to access the TMDB API.
+## Overview
 
-> **Note:** You only need your Bearer token or API key for this endpoint.
+Use this endpoint to verify that your TMDB credentials are valid before making authenticated API requests.
 
-## Example request
+You can authenticate the request using either:
 
-### API key
+* A TMDB API key passed as the `api_key` query parameter.
+* A TMDB API Read Access Token passed as a Bearer token in the `Authorization` header.
 
-```bash
-GET {{base_url}}/authentication/validate_key?api_key={{api_key}}
-```
+**Note:** This endpoint does not require any additional parameters beyond the authentication credentials.
 
-### Bearer token
+## API Key Authentication
+
+Pass your TMDB API key using the `api_key` query parameter.
 
 ```bash
-GET {{base_url}}/authentication/validate_key
-Authorization: Bearer {{access_token}}
+curl --request GET \
+  --url 'https://api.themoviedb.org/3/authentication/validate_key?api_key=YOUR_API_KEY'
 ```
 
-## Example success response
+## Bearer Token Authentication
+
+Pass your TMDB API Read Access Token in the `Authorization` header as a Bearer token.
+
+```bash
+curl --request GET \
+  --url https://api.themoviedb.org/3/authentication/validate_key \
+  --header 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+```
+
+## Successful Response
+
+A successful request returns a confirmation that your credentials are valid.
 
 ```json
 {
@@ -32,9 +42,21 @@ Authorization: Bearer {{access_token}}
 }
 ```
 
-## Common use cases
+## Common Use Cases
 
-* Verify API credentials during application setup.
+* Verify credentials during application setup.
 * Confirm that an API key or access token is valid.
-* Test API connectivity before making authenticated requests.
+* Test API connectivity before making other authenticated requests.
 * Troubleshoot authentication or configuration issues.
+
+## Errors
+
+If the supplied credentials are invalid, the API returns a `401 Unauthorized` response.
+
+```json
+{
+  "success": false,
+  "status_code": 7,
+  "status_message": "Invalid API key: You must be granted a valid key."
+}
+```
