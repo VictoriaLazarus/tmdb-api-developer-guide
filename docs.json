@@ -1,15 +1,141 @@
 {
+  "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "TMDB API Developer Guide",
+  "description": "A developer guide to the TMDB API: authentication, search, discover, movies, networks, and account endpoints.",
   "colors": {
-    "primary": "#0D9373"
+    "primary": "#0D9373",
+    "light": "#55D799",
+    "dark": "#0D9373"
   },
   "navigation": {
     "tabs": [
       {
+        "tab": "Overview",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "overview/introduction",
+              "overview/api-versions",
+              "overview/project-scope"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Getting started",
+        "groups": [
+          {
+            "group": "Set up",
+            "pages": [
+              "getting-started/prerequisites",
+              "getting-started/environment"
+            ]
+          },
+          {
+            "group": "Make a call",
+            "pages": [
+              "getting-started/first-request"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Authentication",
+        "groups": [
+          {
+            "group": "Authentication",
+            "pages": [
+              "authentication/overview",
+              "authentication/v3-session-flow",
+              "authentication/guest-sessions",
+              "authentication/v4-tokens"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "API Reference",
-        "pages": [
-          "api-reference/authentication/validate-key"
+        "openapi": "openapi/tmdb-openapi.yaml"
+      },
+      {
+        "tab": "Errors",
+        "groups": [
+          {
+            "group": "Errors",
+            "pages": [
+              "errors/overview",
+              "errors/status-codes",
+              "errors/troubleshooting"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "Changelog",
+            "pages": [
+              "changelog/overview"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "TMDB developer portal",
+        "href": "https://developer.themoviedb.org/docs"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "API Reference",
+      "href": "/api-reference"
+    }
+  },
+  "footer": {
+    "links": [
+      {
+        "header": "Documentation",
+        "items": [
+          {
+            "label": "Getting started",
+            "href": "/getting-started/prerequisites"
+          },
+          {
+            "label": "Authentication",
+            "href": "/authentication/overview"
+          },
+          {
+            "label": "API reference",
+            "href": "/api-reference"
+          },
+          {
+            "label": "Errors",
+            "href": "/errors/overview"
+          }
+        ]
+      },
+      {
+        "header": "TMDB",
+        "items": [
+          {
+            "label": "Developer portal",
+            "href": "https://developer.themoviedb.org/docs"
+          },
+          {
+            "label": "API settings",
+            "href": "https://www.themoviedb.org/settings/api"
+          },
+          {
+            "label": "API terms of use",
+            "href": "https://www.themoviedb.org/api-terms-of-use"
+          }
         ]
       }
     ]

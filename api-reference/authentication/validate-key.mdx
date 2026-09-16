@@ -1,5 +1,9 @@
-Validates TMDB API credentials using an API key (passed as the `api_key` query parameter) or API Read Access Token (passed as a Bearer token in the `Authorization` header
-).
+---
+title: "Validate key"
+openapi: "GET /authentication/validate_key"
+---
+
+Validates TMDB API credentials using an API key (passed as the `api_key` query parameter) or API Read Access Token (passed as a Bearer token in the `Authorization` header).
 
 **Note:** This endpoint does not require any additional parameters beyond the authentication credentials.
 
@@ -22,33 +26,9 @@ curl --request GET \
   --header 'Authorization: Bearer YOUR_ACCESS_TOKEN'
 ```
 
-## Successful response
-
-A successful request returns a confirmation that your credentials are valid.
-
-```json
-{
-  "success": true,
-  "status_code": 1,
-  "status_message": "Success."
-}
-```
-
 ## Common use cases
 
 * Verify credentials during application setup.
 * Confirm that an API key or access token is valid.
 * Test API connectivity before making other authenticated requests.
 * Troubleshoot authentication or configuration issues.
-
-## Error
-
-If the supplied credentials are invalid, the API returns a `401 Unauthorized` response.
-
-```json
-{
-  "success": false,
-  "status_code": 7,
-  "status_message": "Invalid API key: You must be granted a valid key."
-}
-```
