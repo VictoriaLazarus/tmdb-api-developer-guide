@@ -1,0 +1,43 @@
+---
+
+title: Validate key
+openapi: /openapi/tmdb-openapi.yaml GET /authentication/validate_key
+--------------------------------------------------------------------
+
+# Validate key
+
+Validates your TMDB API credentials by confirming that the supplied API key or access token is recognized and authorized to access the TMDB API.
+
+> **Note:** You only need your Bearer token or API key for this endpoint.
+
+## Example request
+
+### API key
+
+```bash
+GET {{base_url}}/authentication/validate_key?api_key={{api_key}}
+```
+
+### Bearer token
+
+```bash
+GET {{base_url}}/authentication/validate_key
+Authorization: Bearer {{access_token}}
+```
+
+## Example success response
+
+```json
+{
+  "success": true,
+  "status_code": 1,
+  "status_message": "Success."
+}
+```
+
+## Common use cases
+
+* Verify API credentials during application setup.
+* Confirm that an API key or access token is valid.
+* Test API connectivity before making authenticated requests.
+* Troubleshoot authentication or configuration issues.

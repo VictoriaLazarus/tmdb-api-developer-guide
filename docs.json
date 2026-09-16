@@ -8,7 +8,9 @@
     "tabs": [
       {
         "tab": "API Reference",
-        "openapi": "openapi/tmdb-openapi.yaml"
+        "pages": [
+          "api-reference/authentication/validate-key"
+        ]
       }
     ]
   }
