@@ -306,7 +306,7 @@ paths:
 
         The diagram below further expatiates on this:
 
-        <img src="https://content.pstmn.io/4f6e0ea9-a563-46e7-9e29-953d6c9019fa/Xy0gdmlzdWFsIHNlbGVjdGlvbiAoMykucG5n" />
+        <img src="/assets/images/authentication-paths.png" />
       operationId: createGuestSession
       security:
       - BearerAuth: []
@@ -469,7 +469,7 @@ paths:
 
         Both approaches produce the same result: a validated request token that can be used to create a session.
 
-        <img src="https://content.pstmn.io/2e4d2b45-5e23-4878-a598-03ee86dbff78/QXV0aGVudGljYXRpb24gd29ya2Zsb3cgLSB2aXN1YWwgc2VsZWN0aW9uICgxKS5wbmc=" width="579" height="272" />
+        <img src="/assets/images/secure-api-access.png" width="579" height="272" />
 
         ## Notes
 
