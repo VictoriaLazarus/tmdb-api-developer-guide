@@ -8,6 +8,11 @@
     "light": "#55D799",
     "dark": "#0D9373"
   },
+  "api": {
+  "playground": {
+    "display": "interactive"
+  }
+ }, 
   "navigation": {
     "tabs": [
       {
