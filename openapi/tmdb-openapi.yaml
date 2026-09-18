@@ -3496,12 +3496,11 @@ paths:
 
         ## Prerequisites
 
-        This endpoint requires:
+        Aside your API key or token, this endpoint requires:
 
         - A valid `movie_id`.
         - A valid authenticated `session_id`.
-        - A valid Bearer token.
-
+        
         Requests made without a valid authenticated session return an authentication error.
 
         ## Common use cases
@@ -3791,14 +3790,6 @@ paths:
 
         The response is divided into two primary arrays: **cast**, which contains actors and the characters they portray, and **crew**, which contains the production personnel responsible for creating the movie, such as directors, producers, writers, editors, composers, and other contributors.
 
-        ## Common use cases
-
-        - Display movie cast lists.
-        - Display directors, producers, writers, and other crew members.
-        - Link cast and crew members to their profile pages.
-        - Build movie credits pages.
-        - Support actor, director, and crew search features.
-
         ## `cast`
 
         The `cast` array contains people who appear in the movie.
@@ -3822,6 +3813,14 @@ paths:
         | `department` | Production department (for example, Directing or Writing). |
         | `job` | Specific role performed by the crew member. |
         | `profile_path` | Path to the crew member's profile image. |
+
+        ## Common use cases
+
+        - Display movie cast lists.
+        - Display directors, producers, writers, and other crew members.
+        - Link cast and crew members to their profile pages.
+        - Build movie credits pages.
+        - Support actor, director, and crew search features.
       operationId: getMovieCredits
       security:
       - BearerAuth: []
@@ -3898,14 +3897,6 @@ paths:
       description: |-
         Retrieves the images associated with a specific movie, including posters, backdrops, and logos in multiple languages and sizes.
 
-        ## Common use cases
-
-        - Display movie posters in search results and detail pages.
-        - Show backdrop images as banners or hero images.
-        - Display localized movie logos.
-        - Build image galleries for movies.
-        - Retrieve assets for marketing or promotional content.
-
         ## `backdrops`
 
         High-resolution background images commonly used as banners or hero images.
@@ -3946,6 +3937,14 @@ paths:
         | `vote_count` | Number of votes received. |
 
         > **Note**: If the `language` parameter is specified, TMDB returns images that match that language. Use `include_image_language` to retrieve images in additional languages or images that are not associated with any language.
+        
+        ## Common use cases
+
+        - Display movie posters in search results and detail pages.
+        - Show backdrop images as banners or hero images.
+        - Display localized movie logos.
+        - Build image galleries for movies.
+        - Retrieve assets for marketing or promotional content.
       operationId: getMovieImages
       security:
       - BearerAuth: []
@@ -4099,14 +4098,6 @@ paths:
       description: |-
         Retrieves the keywords associated with a specific movie. Keywords are descriptive tags that represent themes, topics, settings, events, or concepts related to a movie.
 
-        ## Common use cases
-
-        - Categorize movies using descriptive themes.
-        - Improve search relevance and filtering.
-        - Build recommendation engines based on shared keywords.
-        - Discover movies with similar themes or concepts.
-        - Enrich movie metadata for analytics or content management.
-
         ## Keywords vs. genres
 
         Although both keywords and genres describe a movie, they serve different purposes.
@@ -4118,6 +4109,14 @@ paths:
         | Example: **Action**, **Comedy**, **Drama** | Example: **time travel**, **serial killer**, **space exploration**, **coming of age** |
 
         For example, two movies may both belong to the **Science Fiction** genre, but one may have the keywords **artificial intelligence** and **space exploration**, while the other has **time loop** and **parallel universe**. Keywords provide the additional context needed to distinguish movies with similar genres.
+         
+        ## Common use cases
+
+        - Categorize movies using descriptive themes.
+        - Improve search relevance and filtering.
+        - Build recommendation engines based on shared keywords.
+        - Discover movies with similar themes or concepts.
+        - Enrich movie metadata for analytics or content management.
       operationId: getMovieKeywords
       security:
       - BearerAuth: []
@@ -4188,18 +4187,7 @@ paths:
         - Trigger content ingestion or synchronization workflows.
         - Retrieve a current example movie object during development.
 
-        ## Notes
-
-        The latest movie is determined by the creation time of the TMDB record, not by the movie’s release date or popularity. This means the endpoint may return:
-
-        - unreleased movies,
-        - recently added catalog entries,
-        - placeholder records,
-        - or movies with incomplete metadata.
-
-        For example, a movie released in 1995 but added to TMDB today may be returned by this endpoint.
-
-        Tip: This endpoint is most useful for monitoring and testing purposes. If your goal is to discover recently released movies, use endpoints such as **Now Playing Movies**, **Upcoming Movies**, or **Discover Movies** with release date filters instead.
+        > Note: The latest movie is determined by the creation time of the TMDB record, not by the movie’s release date or popularity. Therefore, this endpoint is most useful for monitoring and testing purposes. If your goal is to discover recently released movies, use endpoints such as **Now Playing Movies**, **Upcoming Movies**, or **Discover Movies** with release date filters instead.
       operationId: getLatestMovie
       security:
       - BearerAuth: []
