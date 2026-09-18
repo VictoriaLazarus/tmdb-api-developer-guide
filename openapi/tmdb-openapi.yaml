@@ -2038,12 +2038,11 @@ paths:
 
         ## Notes
 
-        - This endpoint does not require a `movie_id`.
         - Certification ratings are grouped by ISO 3166-1 country codes (for example, `US`, `GB`, `DE`, and `FR`).
         - Certification systems vary by country, so the available ratings differ between regions.
         - The returned certification values can be used with endpoints such as **Discover Movies** to filter content based on regional age ratings.
 
-        Tip: This endpoint returns the available movie certification systems used by each country—it does not return the certification assigned to a specific movie.
+        This endpoint returns the available movie certification systems used by each country—it does not return the certification assigned to a specific movie.
 
         For example:
 
@@ -2100,17 +2099,6 @@ paths:
       description: |-
         The **TV Certifications** endpoint retrieves an up-to-date list of officially supported TV show certifications on TMDB.
 
-        A successful request returns a `200 OK` response containing a `certifications` object.
-
-        The `certifications` object is organized by country or region code. Each country contains an array of certification objects.
-
-        ## Prerequisites
-
-        Before calling this endpoint, ensure that you have:
-
-        1. The `base_url` environment variable configured correctly.
-        2. The Authorization header configured with your valid Bearer token.
-
         ## Common use cases
 
         - Display available TV content ratings.
@@ -2118,11 +2106,7 @@ paths:
         - Map TMDB TV certification codes to user-facing descriptions.
         - Retrieve the rating systems supported for different countries or regions.
 
-        ## Notes
-
-        - The endpoint returns certification information rather than individual TV shows.
-        - Certification data is grouped by country or region.
-        - The certification list may be updated as TMDB updates its supported rating systems.
+        > Notes: Certification data is grouped by country or region. The certification list may be updated as TMDB updates its supported rating systems.
       operationId: getTVCertifications
       security:
       - BearerAuth: []
@@ -2164,11 +2148,7 @@ paths:
         - Retrieve collection metadata before requesting collection details.
         - Navigate users to related movies within a franchise.
 
-        ## Notes
-
-        - Returns results that match the collection's original, translated, or alternative names.
-        - Only collection metadata is returned.
-        - Collections represent groups of related movies that belong to the same franchise or series, such as trilogies or cinematic universes.
+        > Notes: Collections represent groups of related movies that belong to the same franchise or series, such as trilogies or cinematic universes.
       operationId: searchCollections
       security:
       - BearerAuth: []
@@ -2240,7 +2220,7 @@ paths:
       description: |-
         Searches TMDB production companies using their original or alternative names. Production companies are organizations involved in the creation, financing, or distribution of movies and TV shows.
 
-        **Note:** `logo_path` is an image path rather than a complete image URL. Your application must combine it with TMDB's image base URL to display the company's logo.
+        > Note: `logo_path` is an image path rather than a complete image URL. Your application must combine it with TMDB's image base URL to display the company's logo.
 
         ## Common use cases
 
@@ -2249,9 +2229,6 @@ paths:
         - Retrieve a company's TMDB ID for subsequent Company API requests.
         - Build search and autocomplete functionality for production companies.
 
-        ## Notes
-
-        - Returns company metadata only. Use the **Company Details** endpoint to retrieve additional information about a specific company.
       operationId: searchCompanies
       security:
       - BearerAuth: []
@@ -2323,7 +2300,7 @@ paths:
       description: |-
         Searches TMDB keywords by name. Keywords are descriptive tags that represent themes, topics, locations, events, or other notable attributes and are associated with movies and TV shows.
 
-        **Note:** Keywords provide more specific themes, concepts, or descriptive tags than genres. For example, you can use`superhero, time travel`, or `space travel` as keywords to describe specific aspects of a movie.
+        > Note: Keywords provide more specific themes, concepts, or descriptive tags than genres. For example, you can use`superhero, time travel`, or `space travel` as keywords to describe specific aspects of a movie.
 
         ## Common use cases
 
@@ -2332,10 +2309,7 @@ paths:
         - Filter movies or TV shows by theme or topic using Discover endpoints.
         - Build keyword search or autocomplete functionality.
 
-        ## Notes
-
-        - Returns keywords that match the supplied search query.
-        - The returned keyword ID can be used with other TMDB endpoints, such as **Discover Movies** and **Discover TV**, to filter content by keyword.
+        > Note: The returned keyword ID can be used with other TMDB endpoints, such as **Discover Movies** and **Discover TV**, to filter content by keyword.
       operationId: searchKeywords
       security:
       - BearerAuth: []
@@ -2412,12 +2386,7 @@ paths:
         - Filter search results by release year, language, or region.
         - Allow users to quickly locate movies within an application.
 
-        ## Notes
-
-        - Optional parameters such as `language`, `region`, `year`, `primary_release_year`, and `include_adult` can be used to refine search results.
-        - Each movie includes a unique TMDB ID that can be used with Movie endpoints to retrieve detailed information.
-
-        **Important:** The `release_date` field may be empty when TMDB does not have a release date for a movie. Similarly, some metadata may vary depending on the information available for the movie and the language or region specified in the request.
+        > Note: The `release_date` field may be empty when TMDB does not have a release date for a movie. Similarly, some metadata may vary depending on the information available for the movie and the language or region specified in the request.
       operationId: searchMovies
       security:
       - BearerAuth: []
@@ -2524,10 +2493,7 @@ paths:
         - Reduce the number of API requests by searching multiple resource types at once.
         - Provide users with comprehensive search results from a single query.
 
-        ## Notes
-
-        - Each result includes a `media_type` field indicating whether the resource is a `movie`, `tv`, or `person`.
-        - Use the returned TMDB IDs with the corresponding Movie, TV, or People endpoints to retrieve additional information.
+        > Note: Each result includes a `media_type` field indicating whether the resource is a `movie`, `tv`, or `person`. Use the returned TMDB IDs with the corresponding Movie, TV, or People endpoints to retrieve additional information.
       operationId: searchMulti
       security:
       - BearerAuth: []
@@ -2619,13 +2585,7 @@ paths:
         - Retrieve a person's TMDB ID for use with the People endpoints.
         - Display cast and crew search results within an application.
 
-        ## Notes
-
-        - Returns matching people based on the supplied search term.
-        - Each result includes a unique TMDB person ID that can be used with the People collection to retrieve additional details.
-        - Search results may include actors, actresses, directors, producers, writers, composers, and other entertainment professionals.
-
-        Tip: Use the returned ID value with the **People** collection to retrieve detailed information about a person, including their biography, movie and TV credits, images, external IDs, and social media links (where available).
+        > Notes: Use the returned ID value with the **People** collection to retrieve detailed information about a person, including their biography, movie and TV credits, images, external IDs, and social media links (where available).
       operationId: searchPeople
       security:
       - BearerAuth: []
@@ -2712,13 +2672,7 @@ paths:
         - Provide matching TV show suggestions as users type.
         - Show titles, release dates, overviews, ratings, and popularity scores.
         - Use the returned TMDB ID to retrieve additional information about a selected show.
-        - Help users find TV shows based on search queries.EndFragment
 
-        ## Notes
-
-        - Searches across original, translated, and alternative TV show names.
-        - Optional parameters such as `language`, `first_air_date_year`, `include_adult`, and `page` can be used to refine search results.
-        - Each result includes a unique TMDB TV series ID that can be used with the TV collection to retrieve detailed information.
       operationId: searchTV
       security:
       - BearerAuth: []
@@ -2858,8 +2812,8 @@ paths:
 
         | Separator | Behavior | Example |
         | --- | --- | --- |
-        | `,` | **AND** — results must satisfy **all** specified values. | `with_genres=28,12` |
-        | ` | ` | **OR** — results may satisfy **any** of the specified values. |
+        | (,) | **AND** — results must satisfy **all** specified values. | `with_genres=28,12` |
+        | (|) | **OR** — results may satisfy **any** of the specified values. |
 
         For example:
 
@@ -2868,14 +2822,7 @@ paths:
 
         Using this logic allows developers to create more flexible and precise discovery queries.
 
-        ## Notes
-
-        - Does not require a search query (`query`).
-        - Supports over **30 filtering and sorting parameters**.
-        - Multiple filters can be combined to create highly specific searches.
-        - Each movie includes a TMDB movie ID you can use with the Movie collection to retrieve detailed information.
-
-        **Note:** This endpoint supports more than 30 query parameters. The parameters listed above are the most commonly used. Refer to the TMDB API reference for the complete list of supported filters and sorting options.
+        > Note: This endpoint supports more than 30 query parameters. The parameters listed above are the most commonly used. Refer to the TMDB API reference for the complete list of supported filters and sorting options.
       operationId: discoverMovies
       security:
       - BearerAuth: []
@@ -3155,7 +3102,7 @@ paths:
       description: |-
         Discovers TV shows by applying one or more filtering and sorting criteria instead of a search query.
 
-        > **Note**: This endpoint retrieves public TMDB data and does not require a `session_id` or `account_id`.
+        > Note: This endpoint retrieves public TMDB data and does not require a `session_id` or `account_id`.
 
         ## Common use cases
 
@@ -3191,22 +3138,15 @@ paths:
 
         | Separator | Behavior | Example |
         | --- | --- | --- |
-        | `,` | **AND** — results must satisfy all specified values. | `with_genres=18,10765` |
-        | ` | ` | **OR** — results may satisfy any specified value. |
+        | (,) | **AND** — results must satisfy all specified values. | `with_genres=18,10765` |
+        | (|) | **OR** — results may satisfy any specified value. |
 
         For example:
 
         - `with_genres=18,10765` returns TV shows that are both **Drama** and **Sci-Fi & Fantasy**.
         - `with_genres=18|10765` returns TV shows that are **Drama** or **Sci-Fi & Fantasy**.
 
-        ## Notes
-
-        - Does not require a search query (`query`).
-        - Supports advanced filtering and sorting through multiple query parameters.
-        - Multiple filters can be combined to create highly specific discovery queries.
-        - Each TV show includes a unique TMDB TV series ID that can be used with the TV collection to retrieve additional information.
-
-        **Note:** The Discover TV endpoint supports many of the same filtering and sorting options as **Discover Movies**. However, TV-specific parameters such as `first_air_date_year`, `first_air_date.gte`, and `first_air_date.lte` replace the movie-specific release date parameters. Use the endpoint that corresponds to the type of media you want to discover.
+        > Note: The Discover TV endpoint supports many of the same filtering and sorting options as **Discover Movies**. However, TV-specific parameters such as `first_air_date_year`, `first_air_date.gte`, and `first_air_date.lte` replace the movie-specific release date parameters. Use the endpoint that corresponds to the type of media you want to discover.
       operationId: discoverTV
       security:
       - BearerAuth: []
@@ -5503,9 +5443,7 @@ paths:
         - Identifying content distributors
         - Supporting content discovery applications
 
-        ## Notes
-
-        Network IDs can be obtained from TV-related endpoints such as `/tv/{tv_id}`, `/tv/popular`, or `/tv/top_rated`. The response from these endpoints includes a `networks` array containing the network's unique identifier.
+        > Note: Network IDs can be obtained from TV-related endpoints such as `/tv/{tv_id}`, `/tv/popular`, or `/tv/top_rated`. The response from these endpoints includes a `networks` array containing the network's unique identifier.
 
         Example:
 
