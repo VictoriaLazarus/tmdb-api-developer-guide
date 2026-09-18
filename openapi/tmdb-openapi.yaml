@@ -304,7 +304,7 @@ paths:
         | Cannot access personal account data. | Can access favorites, watchlists, ratings, account states, and custom lists. |
         | Intended for anonymous users. | Intended for authenticated users. |
 
-        The diagram below further expatiates on this:
+        The diagram below illustrates this:
 
         <img src="/assets/images/authentication-paths.png" />
       operationId: createGuestSession
@@ -882,7 +882,6 @@ paths:
 
         ## Notes
 
-        - Results are returned in a paginated format.
         - Only movies that the authenticated user has marked as favorites are returned.
         - If the user has not favorited any movies, the `results` array will be empty.
         - Use the `language` parameter to retrieve localized movie information.
@@ -906,7 +905,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language used for localized movie information.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -914,7 +914,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: session_id
         in: query
         schema:
@@ -930,7 +930,7 @@ paths:
           - created_at.asc
           - created_at.desc
           default: created_at.asc
-        description: Specifies how the results should be sorted.
+        description: Sort results by date added, ascending or descending. Defaults to `created_at.asc`.
       responses:
         '200':
           description: Successful response.
@@ -1025,7 +1025,6 @@ paths:
 
         ## Notes
 
-        - Results are returned in a paginated format.
         - Only TV shows that the authenticated user has marked as favorites are returned.
         - If the user has not favorited any TV shows, the `results` array will be empty.
         - Use the `language` parameter to retrieve localized TV show information.
@@ -1047,7 +1046,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language used for localized TV show information.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -1055,7 +1055,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: session_id
         in: query
         schema:
@@ -1071,7 +1071,7 @@ paths:
           - created_at.asc
           - created_at.desc
           default: created_at.asc
-        description: Specifies how the results should be sorted.
+        description: Sort results by date added, ascending or descending. Defaults to `created_at.asc`.
       responses:
         '200':
           description: Successful response.
@@ -1167,7 +1167,6 @@ paths:
         ## Notes
 
         - Only custom lists belonging to the authenticated account are returned.
-        - Results are returned in a paginated format.
         - The response contains summary information for each list rather than the movies within the list.
         - Use the **List** endpoints to retrieve or manage the contents of a specific custom list.
 
@@ -1200,7 +1199,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: session_id
         in: query
         schema:
@@ -1300,7 +1299,6 @@ paths:
 
         ## Notes
 
-        - Results are returned in a paginated format.
         - Only movies rated by the authenticated user are returned.
         - If the user has not rated any movies, the `results` array will be empty.
         - The `rating` field represents the score assigned by the authenticated user, while `vote_average` represents the average rating from all TMDB users.
@@ -1333,7 +1331,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language used for localized movie information.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -1341,7 +1340,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: session_id
         in: query
         schema:
@@ -1357,7 +1356,7 @@ paths:
           - created_at.asc
           - created_at.desc
           default: created_at.asc
-        description: Specifies how the results should be sorted.
+        description: Sort results by date added, ascending or descending. Defaults to `created_at.asc`.
       responses:
         '200':
           description: Successful response.
@@ -1452,7 +1451,6 @@ paths:
 
         ## Notes
 
-        - Results are returned in a paginated format.
         - Only TV shows rated by the authenticated user are returned.
         - If the user has not rated any TV shows, the `results` array will be empty.
         - The `rating` field represents the score assigned by the authenticated user, while `vote_average` represents the average rating from all TMDB users.
@@ -1476,7 +1474,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language used for localized TV show information.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -1484,7 +1483,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: session_id
         in: query
         schema:
@@ -1500,7 +1499,7 @@ paths:
           - created_at.asc
           - created_at.desc
           default: created_at.asc
-        description: Specifies how the results should be sorted.
+        description: Sort results by date added, ascending or descending. Defaults to `created_at.asc`.
       responses:
         '200':
           description: Successful response.
@@ -1596,7 +1595,6 @@ paths:
 
         ## Notes
 
-        - Results are returned in a paginated format.
         - Only TV episodes rated by the authenticated user are returned.
         - If the user has not rated any TV episodes, the `results` array will be empty.
         - The `rating` field represents the score assigned by the authenticated user, while `vote_average` represents the average rating from all TMDB users.
@@ -1620,7 +1618,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language used for localized episode information.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -1628,7 +1627,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: session_id
         in: query
         schema:
@@ -1644,7 +1643,7 @@ paths:
           - created_at.asc
           - created_at.desc
           default: created_at.asc
-        description: Specifies how the results should be sorted.
+        description: Sort results by date added, ascending or descending. Defaults to `created_at.asc`.
       responses:
         '200':
           description: Successful response.
@@ -1741,7 +1740,6 @@ paths:
 
         ## Notes
 
-        - Results are returned in a paginated format.
         - Only movies added to the authenticated user's watchlist are returned.
         - If the watchlist is empty, the `results` array will be empty.
         - Use the `language` parameter to retrieve localized movie information.
@@ -1765,7 +1763,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language used for localized movie information.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -1773,7 +1772,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: session_id
         in: query
         schema:
@@ -1789,7 +1788,7 @@ paths:
           - created_at.asc
           - created_at.desc
           default: created_at.asc
-        description: Specifies how the results should be sorted.
+        description: Sort results by date added, ascending or descending. Defaults to `created_at.asc`.
       responses:
         '200':
           description: Successful response.
@@ -2045,7 +2044,6 @@ paths:
 
         ## Notes
 
-        - Results are returned in a paginated format.
         - Only TV shows added to the authenticated user's watchlist are returned.
         - If the watchlist is empty, the `results` array will be empty.
         - Use the `language` parameter to retrieve localized TV show information.
@@ -2069,7 +2067,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language used for localized TV show information.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -2077,7 +2076,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: session_id
         in: query
         schema:
@@ -2093,7 +2092,7 @@ paths:
           - created_at.asc
           - created_at.desc
           default: created_at.asc
-        description: Specifies how the results should be sorted.
+        description: Sort results by date added, ascending or descending. Defaults to `created_at.asc`.
       responses:
         '200':
           description: Successful response.
@@ -2309,7 +2308,6 @@ paths:
         ## Notes
 
         - Returns results that match the collection's original, translated, or alternative names.
-        - Results are paginated and support the `page` query parameter.
         - Only collection metadata is returned.
         - Collections represent groups of related movies that belong to the same franchise or series, such as trilogies or cinematic universes.
       operationId: searchCollections
@@ -2323,7 +2321,7 @@ paths:
         schema:
           type: string
         example: Harry Potter
-        description: Searches for the Harry Potter Collection.
+        description: The name or keyword used to search for movie collections.
       - name: page
         in: query
         schema:
@@ -2331,14 +2329,14 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Returns a specific page of search results.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
         example: '1'
       - name: language
         in: query
         required: false
         schema:
           type: string
-        description: Specifies the language of the returned results.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`.
       responses:
         '200':
           description: Successful response.
@@ -2394,7 +2392,6 @@ paths:
 
         ## Notes
 
-        - Results are paginated and support the `page` query parameter.
         - Returns company metadata only. Use the **Company Details** endpoint to retrieve additional information about a specific company.
       operationId: searchCompanies
       security:
@@ -2417,13 +2414,13 @@ paths:
           minimum: 1
           default: 1
         example: '1'
-        description: Returns a specific page of search results.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: language
         in: query
         required: false
         schema:
           type: string
-        description: Specifies the language of the returned results.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`.
       responses:
         '200':
           description: Successful response.
@@ -2479,7 +2476,6 @@ paths:
         ## Notes
 
         - Returns keywords that match the supplied search query.
-        - Results are paginated and support the `page` query parameter.
         - The returned keyword ID can be used with other TMDB endpoints, such as **Discover Movies** and **Discover TV**, to filter content by keyword.
       operationId: searchKeywords
       security:
@@ -2501,13 +2497,13 @@ paths:
           minimum: 1
           default: 1
         example: '1'
-        description: Returns a specific page of search results.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: language
         in: query
         required: false
         schema:
           type: string
-        description: Specifies the language of the returned results.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`.
       responses:
         '200':
           description: Successful response.
@@ -2549,8 +2545,6 @@ paths:
       description: |-
         Searches TMDB movies using their original, translated, or alternative titles.
 
-        Note: In this example, TMDB found one matching movie, _Inception_, with a TMDB movie ID of `27205`.
-
         ## Common use cases
 
         - Search for movies by title.
@@ -2561,7 +2555,6 @@ paths:
 
         ## Notes
 
-        - Results are returned in a paginated format and support the `page` query parameter.
         - Optional parameters such as `language`, `region`, `year`, `primary_release_year`, and `include_adult` can be used to refine search results.
         - Each movie includes a unique TMDB ID that can be used with Movie endpoints to retrieve detailed information.
 
@@ -2584,14 +2577,15 @@ paths:
           type: boolean
           default: false
         example: 'false'
-        description: Determines whether adult content is included in the results.
+        description: Determine whether to include adult content in the results. Defaults to `false`.
       - name: language
         in: query
         schema:
           type: string
           default: en-US
         example: en-US
-        description: Specifies the language of the returned results.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: primary_release_year
         in: query
         schema:
@@ -2606,19 +2600,19 @@ paths:
           minimum: 1
           default: 1
         example: '1'
-        description: Returns a specific page of search results.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: region
         in: query
         schema:
           type: string
         example: US
-        description: Filters results based on a specific country or region.
+        description: ISO 3166-1 country code used to filter release information, such as `US`.
       - name: year
         in: query
         schema:
           type: string
         example: '2010'
-        description: Filters results by release year.
+        description: Restrict results to titles released in the given year.
       responses:
         '200':
           description: Successful response.
@@ -2674,7 +2668,6 @@ paths:
         ## Notes
 
         - Each result includes a `media_type` field indicating whether the resource is a `movie`, `tv`, or `person`.
-        - Results are paginated and support the `page` query parameter.
         - Use the returned TMDB IDs with the corresponding Movie, TV, or People endpoints to retrieve additional information.
       operationId: searchMulti
       security:
@@ -2694,14 +2687,15 @@ paths:
           type: boolean
           default: false
         example: 'false'
-        description: Indicates whether adult content is included in the results.
+        description: Determine whether to include adult content in the results. Defaults to `false`.
       - name: language
         in: query
         schema:
           type: string
           default: en-US
         example: en-US
-        description: Specifies the language of the returned results.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -2710,7 +2704,7 @@ paths:
           minimum: 1
           default: 1
         example: '1'
-        description: Returns a specific page of search results.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       responses:
         '200':
           description: Successful response.
@@ -2769,7 +2763,6 @@ paths:
         ## Notes
 
         - Returns matching people based on the supplied search term.
-        - Results are paginated and support the `page` query parameter.
         - Each result includes a unique TMDB person ID that can be used with the People collection to retrieve additional details.
         - Search results may include actors, actresses, directors, producers, writers, composers, and other entertainment professionals.
 
@@ -2792,14 +2785,15 @@ paths:
           type: boolean
           default: false
         example: 'false'
-        description: Indicates whether adult content is included in the results.
+        description: Determine whether to include adult content in the results. Defaults to `false`.
       - name: language
         in: query
         schema:
           type: string
           default: en-US
         example: en-US
-        description: Specifies the language of the returned results.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -2808,7 +2802,7 @@ paths:
           minimum: 1
           default: 1
         example: '1'
-        description: Returns a specific page of search results.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       responses:
         '200':
           description: Successful response.
@@ -2864,7 +2858,6 @@ paths:
         ## Notes
 
         - Searches across original, translated, and alternative TV show names.
-        - Results are returned in a paginated format and support the `page` query parameter.
         - Optional parameters such as `language`, `first_air_date_year`, `include_adult`, and `page` can be used to refine search results.
         - Each result includes a unique TMDB TV series ID that can be used with the TV collection to retrieve detailed information.
       operationId: searchTV
@@ -2887,21 +2880,22 @@ paths:
           minimum: 1000
           maximum: 9999
         example: 2008
-        description: Filters results by the TV show's first air date year.
+        description: Filter TV shows by the year they first aired.
       - name: include_adult
         in: query
         schema:
           type: boolean
           default: false
         example: 'false'
-        description: Indicates whether adult content is included in the results.
+        description: Determine whether to include adult content in the results. Defaults to `false`.
       - name: language
         in: query
         schema:
           type: string
           default: en-US
         example: en-US
-        description: Specifies the language of the returned results.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -2910,7 +2904,7 @@ paths:
           minimum: 1
           default: 1
         example: '1'
-        description: Returns a specific page of search results.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: year
         in: query
         schema:
@@ -3019,7 +3013,6 @@ paths:
 
         - Does not require a search query (`query`).
         - Supports over **30 filtering and sorting parameters**.
-        - Returns results in a paginated format.
         - Multiple filters can be combined to create highly specific searches.
         - Each movie includes a TMDB movie ID you can use with the Movie collection to retrieve detailed information.
 
@@ -3054,7 +3047,7 @@ paths:
         schema:
           type: boolean
           default: false
-        description: Whether to include adult content in the results. Defaults to `false`.
+        description: Determine whether to include adult content in the results. Defaults to `false`.
       - name: include_video
         in: query
         schema:
@@ -3066,7 +3059,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language of the returned results.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -3074,14 +3068,14 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Pagination control
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
         example: '1'
       - name: primary_release_year
         in: query
         schema:
           type: integer
           format: int32
-        description: Filter movies by year
+        description: Filters results by the movie's primary release year.
         example: '2023'
       - name: primary_release_date.gte
         in: query
@@ -3135,7 +3129,8 @@ paths:
           - vote_count.asc
           - vote_count.desc
           default: popularity.desc
-        description: Sort results by popularity
+        description: Sort results by title, popularity, revenue, release date, vote average, or vote count,
+          ascending or descending. Defaults to `popularity.desc`.
         example: popularity.desc
       - name: vote_average.gte
         in: query
@@ -3184,7 +3179,8 @@ paths:
           type: string
       - name: with_genres
         in: query
-        description: Filter by Action genre
+        description: Comma-separated list of genre IDs. Results will include movies matching any of the
+          given genres.
         schema:
           type: string
         example: '28'
@@ -3348,7 +3344,6 @@ paths:
 
         - Does not require a search query (`query`).
         - Supports advanced filtering and sorting through multiple query parameters.
-        - Returns results in a paginated format.
         - Multiple filters can be combined to create highly specific discovery queries.
         - Each TV show includes a unique TMDB TV series ID that can be used with the TV collection to retrieve additional information.
 
@@ -3396,7 +3391,7 @@ paths:
         schema:
           type: boolean
           default: false
-        description: Whether to include adult content in the results. Defaults to `false`.
+        description: Determine whether to include adult content in the results. Defaults to `false`.
       - name: include_null_first_air_dates
         in: query
         schema:
@@ -3408,7 +3403,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language of the returned results.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -3416,7 +3412,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specify the results page to return.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
         example: '1'
       - name: screened_theatrically
         in: query
@@ -3441,7 +3437,8 @@ paths:
           - name.asc
           - name.desc
           default: popularity.desc
-        description: Sort results by popularity, vote average, first air date, and other supported fields.
+        description: Sort results by name, popularity, vote average, vote count, or first air date, ascending
+          or descending. Defaults to `popularity.desc`.
         example: popularity.desc
       - name: timezone
         in: query
@@ -3638,7 +3635,8 @@ paths:
           type: string
           default: en-US
         example: en-US
-        description: Specifies the language used for localized movie information.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       responses:
         '200':
           description: Successful response.
@@ -3937,7 +3935,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Returns a specific page of results.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       - name: start_date
         in: query
         schema:
@@ -4107,7 +4105,7 @@ paths:
       - Movies
       summary: Images
       description: |-
-        Retrieves the images associated with a specific movie.
+        Retrieves the images associated with a specific movie, including posters, backdrops, and logos in multiple languages and sizes.
 
         ## Common use cases
 
@@ -4182,7 +4180,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Filters images based on the specified language.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       responses:
         '200':
           description: Successful response.
@@ -4509,7 +4508,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       responses:
         '200':
           description: Successful response.
@@ -4561,7 +4560,7 @@ paths:
       - Movies
       summary: Recommendations
       description: |-
-        Retrieves movie recommendations for a specified movie.
+        Retrieves movie recommendations for a specified movie, based on TMDB's similarity model rather than the requesting user's viewing history.
 
         ## Common use cases
 
@@ -4602,7 +4601,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language used for localized movie information.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -4610,7 +4610,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       responses:
         '200':
           description: Successful response.
@@ -4838,7 +4838,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language of the returned content.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -4846,7 +4847,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of review results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       responses:
         '200':
           description: Successful response.
@@ -4944,7 +4945,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language of the returned content.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       - name: page
         in: query
         schema:
@@ -4952,7 +4954,7 @@ paths:
           format: int32
           minimum: 1
           default: 1
-        description: Specifies the page of results to retrieve.
+        description: Specifies the page of results to retrieve. Minimum `1`, defaults to `1`.
       responses:
         '200':
           description: Successful response.
@@ -5002,7 +5004,7 @@ paths:
       - Movies
       summary: Translations
       description: |-
-        Retrieves all available translations for a specific movie.
+        Retrieves all available translations for a specific movie, including the title, overview, and tagline in each supported language.
 
         ## Common use cases
 
@@ -5208,7 +5210,8 @@ paths:
         schema:
           type: string
           default: en-US
-        description: Specifies the language of the returned video metadata.
+        description: ISO 639-1 language code used to localise the response, such as `en-US`. Defaults
+          to `en-US`.
       responses:
         '200':
           description: Successful response.
@@ -5532,7 +5535,7 @@ paths:
       - Movies
       summary: Delete Rating
       description: |-
-        Deletes a previously submitted movie rating.
+        Deletes a previously submitted movie rating, identified by the session ID or guest session ID used to create it.
 
         ## Common use cases
 
@@ -5802,18 +5805,14 @@ paths:
       tags:
       - Authentication
       summary: Delete Session
-      description: |-
-        Deletes an active v3 session, immediately invalidating the associated `session_id`.
-
-        > **Note**: Before calling this endpoint, ensure that you have a valid `session_id` that has not already expired. Also, once the session has been deleted, it can no longer be used to access authenticated TMDB endpoints that require session-based authentication.
-
-        ## Common use cases
-
-        - Sign a user out of an application.
-        - End an authenticated session after account operations are complete.
-        - Invalidate sessions that are no longer needed.
-        - Improve application security by preventing reuse of an active session.
-        - Support logout functionality across web and mobile applications.        
+      description: "Deletes an active v3 session, immediately invalidating the associated `session_id`.\n\
+        \n> **Note**: Before calling this endpoint, ensure that you have a valid `session_id` that has\
+        \ not already expired. Also, once the session has been deleted, it can no longer be used to access\
+        \ authenticated TMDB endpoints that require session-based authentication.\n\n## Common use cases\n\
+        \n- Sign a user out of an application.\n- End an authenticated session after account operations\
+        \ are complete.\n- Invalidate sessions that are no longer needed.\n- Improve application security\
+        \ by preventing reuse of an active session.\n- Support logout functionality across web and mobile\
+        \ applications.        "
       operationId: deleteSession
       security:
       - BearerAuth: []
@@ -5983,7 +5982,7 @@ components:
       properties:
         id:
           type: integer
-          description: The unique TMDB identifier of the movie.
+          description: Unique TMDB identifier for the movie.
         title:
           type: string
           description: The movie's title.
@@ -6088,7 +6087,7 @@ components:
           description: Contains the TMDB genre IDs associated with the movie.
         id:
           type: integer
-          description: The unique TMDB ID of the movie.
+          description: Unique TMDB identifier for the movie.
         title:
           type: string
           description: The movie's title.
@@ -6304,7 +6303,7 @@ components:
         id:
           type: integer
           format: int32
-          description: Unique TMDB movie identifier.
+          description: Unique TMDB identifier for the movie.
         title:
           type: string
           description: Movie title.
@@ -6553,7 +6552,7 @@ components:
           type: integer
           format: int32
           example: 550
-          description: The unique TMDB ID of the movie.
+          description: Unique TMDB identifier for the movie.
         title:
           type: string
           example: Fight Club
@@ -6607,7 +6606,7 @@ components:
           type: integer
           format: int32
           example: 550
-          description: Unique TMDB identifier for this resource.
+          description: TMDB identifier of the movie these account states apply to.
         favorite:
           type: boolean
           example: true
@@ -6664,7 +6663,7 @@ components:
           type: integer
           format: int32
           example: 550
-          description: The unique TMDB ID of the movie.
+          description: Unique TMDB identifier for the movie.
         titles:
           type: array
           items:
@@ -6724,11 +6723,11 @@ components:
           type: integer
           format: int32
           example: 287
-          description: Unique TMDB identifier for this resource.
+          description: Unique TMDB identifier for the cast member.
         name:
           type: string
           example: Brad Pitt
-          description: Display name of the resource.
+          description: Name of the cast member.
         character:
           type: string
           example: Tyler Durden
@@ -6756,11 +6755,11 @@ components:
           type: integer
           format: int32
           example: 7467
-          description: Unique TMDB identifier for this resource.
+          description: Unique TMDB identifier for the crew member.
         name:
           type: string
           example: David Fincher
-          description: Display name of the resource.
+          description: Name of the crew member.
         department:
           type: string
           example: Directing
@@ -6788,7 +6787,7 @@ components:
           type: integer
           format: int32
           example: 550
-          description: Unique TMDB identifier for this resource.
+          description: TMDB identifier of the movie these credits belong to.
         cast:
           type: array
           items:
@@ -6810,7 +6809,7 @@ components:
           type: integer
           format: int32
           example: 550
-          description: The unique TMDB identifier of the movie.
+          description: Unique TMDB identifier for the movie.
         imdb_id:
           type: string
           nullable: true
@@ -6865,7 +6864,7 @@ components:
           type: integer
           format: int32
           example: 550
-          description: The unique TMDB identifier of the movie.
+          description: Unique TMDB identifier for the movie.
         keywords:
           type: array
           items:
@@ -6933,7 +6932,7 @@ components:
       properties:
         page:
           type: integer
-          description: The current page of search results.
+          description: Current page of the paginated results.
         results:
           type: array
           items:
@@ -6941,7 +6940,7 @@ components:
           description: An array containing collections that match the search query.
         total_pages:
           type: integer
-          description: The total number of pages available for the search results.
+          description: Total number of pages available.
         total_results:
           type: integer
           description: The total number of collections matching the search query.
@@ -6955,7 +6954,7 @@ components:
       properties:
         page:
           type: integer
-          description: The current page of search results.
+          description: Current page of the paginated results.
         results:
           type: array
           items:
@@ -6963,7 +6962,7 @@ components:
           description: An array containing companies that match the search query.
         total_pages:
           type: integer
-          description: The total number of pages available for the search results.
+          description: Total number of pages available.
         total_results:
           type: integer
           description: The total number of companies matching the search query.
@@ -6977,7 +6976,7 @@ components:
       properties:
         page:
           type: integer
-          description: The current page of search results.
+          description: Current page of the paginated results.
         results:
           type: array
           items:
@@ -6985,7 +6984,7 @@ components:
           description: An array containing keywords that match the search query.
         total_pages:
           type: integer
-          description: The total number of pages available for the search results.
+          description: Total number of pages available.
         total_results:
           type: integer
           description: The total number of keywords matching the search query.
@@ -7081,7 +7080,7 @@ components:
       properties:
         id:
           type: integer
-          description: Unique TMDB identifier for this resource.
+          description: TMDB identifier of the movie these images belong to.
         backdrops:
           type: array
           items:
@@ -7176,7 +7175,7 @@ components:
       properties:
         page:
           type: integer
-          description: Current page of results
+          description: Current page of the paginated results.
         results:
           type: array
           items:
@@ -7184,7 +7183,7 @@ components:
           description: Array of similar movies
         total_pages:
           type: integer
-          description: Total number of result pages
+          description: Total number of pages available.
         total_results:
           type: integer
           description: Total number of similar movies
@@ -7201,7 +7200,7 @@ components:
       properties:
         name:
           type: string
-          description: Display name of the resource.
+          description: Display name of the review's author.
         username:
           type: string
           description: TMDB username of the account holder.
@@ -7245,10 +7244,10 @@ components:
       properties:
         id:
           type: integer
-          description: Unique movie identifier
+          description: Unique TMDB identifier for the movie.
         page:
           type: integer
-          description: Current page of results
+          description: Current page of the paginated results.
         results:
           type: array
           items:
@@ -7256,7 +7255,7 @@ components:
           description: Array of review objects
         total_pages:
           type: integer
-          description: Total number of result pages
+          description: Total number of pages available.
         total_results:
           type: integer
           description: Total number of reviews
@@ -7300,7 +7299,7 @@ components:
       properties:
         id:
           type: integer
-          description: Unique TMDB movie identifier.
+          description: Unique TMDB identifier for the movie.
         results:
           type: array
           items:
@@ -7356,7 +7355,7 @@ components:
       properties:
         id:
           type: integer
-          description: Unique TMDB movie identifier.
+          description: Unique TMDB identifier for the movie.
         translations:
           type: array
           items:
@@ -7402,7 +7401,7 @@ components:
       properties:
         id:
           type: integer
-          description: Unique movie identifier
+          description: Unique TMDB identifier for the movie.
         results:
           type: array
           items:
@@ -7454,7 +7453,7 @@ components:
       properties:
         id:
           type: integer
-          description: Unique movie identifier
+          description: Unique TMDB identifier for the movie.
         results:
           type: object
           additionalProperties:
@@ -7542,7 +7541,7 @@ components:
           description: Image height in pixels
         id:
           type: string
-          description: Unique TMDB identifier for this resource.
+          description: Unique TMDB identifier for the logo image.
         file_type:
           type: string
           description: File extension of the image asset, such as `.svg` or `.png`.
