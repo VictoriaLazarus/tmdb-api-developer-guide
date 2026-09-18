@@ -564,10 +564,8 @@ paths:
         ## Prerequisites
 
         - Before calling this endpoint, ensure you have:
-        - Authenticated with the TMDB API using your Bearer token.
         - Completed the authentication workflow to obtain a valid `session_id`.
         - Retrieved your `account_id` using the **Get Account Details** endpoint in the **Authentication** collection (`GET /account`).
-        - Used the returned `account_id` as the path parameter for this endpoint.
 
         > **Note**: This endpoint is typically called after the account ID has been obtained and is used to access additional account profile information.
 
@@ -575,7 +573,6 @@ paths:
 
         - Retrieve a user's profile information.
         - Obtain account preferences such as language and region.
-        - Display account details in an application.
         - Verify the authenticated account before performing account-specific operations.
         - Retrieve account metadata required by other Account endpoints.
       operationId: getAccountDetailsById
@@ -682,23 +679,21 @@ paths:
         ## Prerequisites
 
         Before calling this endpoint, ensure that you have:
-
-        1. Completed the TMDB authentication workflow.
-        2. Obtained a valid `session_id`.
-        3. Retrieved the authenticated user's `account_id`.
-        4. Identified the TMDB ID of the movie or TV show you want to update.
+      
+        1. Obtained a valid `session_id`.
+        2. Retrieved the authenticated user's `account_id`.
+        3. Identified the TMDB ID of the movie or TV show you want to update.
 
         ## Common use cases
 
-        - Allow users to save favorite movies.
-        - Allow users to save favorite TV shows.
+        - Allow users to save favorite movies or TVshows        
         - Build personalized user profiles.
         - Synchronize favorite content across multiple devices.
         - Create "My Favorites" sections within an application.
 
         ## Notes
 
-        This endpoint is **idempotent** with respect to the `favorite` field. Sending the same request multiple times with the same value (for example, `favorite: true` for an item that is already favorited) does not create duplicate entries. Likewise, setting `favorite` to `false` for an item that is not currently in the favorites list ensures it is not marked as a favorite. By specifying the media type, media identifier, and a boolean value indicating whether the item should be favorited, the endpoint allows applications to manage a user's favorites list.
+        This endpoint is **idempotent** with respect to the `favorite` field. Sending the same request multiple times with the same value (for example, `favorite: true` for an item that is already favorited) does not create duplicate entries. Likewise, setting `favorite` to `false` for an item that is not currently in the favorites list ensures it is not marked as a favorite.
       operationId: addFavorite
       security:
       - BearerAuth: []
@@ -827,18 +822,10 @@ paths:
 
         - Display a user's favorite movies.
         - Synchronize favorite movies across multiple devices.
-        - Build personalized movie recommendation features.
         - Allow users to browse and manage their saved favorites.
         - Populate a **My Favorite Movies** section in an application.
 
-        ## Notes
-
-        - Only movies that the authenticated user has marked as favorites are returned.
-        - If the user has not favorited any movies, the `results` array will be empty.
-        - Use the `language` parameter to retrieve localized movie information.
-        - Use the `sort_by` parameter to control the order in which favorites are returned.
-
-        Tip: This endpoint is the counterpart to the **Add Favorite** endpoint. After adding or removing a movie from a user's favorites, you can call this endpoint to retrieve the updated favorites list and verify that the operation was successful.
+        > Note: This endpoint is the counterpart to the **Add Favorite** endpoint. After adding or removing a movie from a user's favorites, you can call this endpoint to retrieve the updated favorites list and verify that the operation was successful.
       operationId: getFavoriteMovies
       security:
       - BearerAuth: []
@@ -962,24 +949,15 @@ paths:
 
         Before calling this endpoint, ensure that you have:
 
-        1. Completed the TMDB authentication workflow.
-        2. Obtained a valid `session_id`.
-        3. Retrieved the authenticated user's `account_id`.
+        1. Obtained a valid `session_id`.
+        2. Retrieved the authenticated user's `account_id`.
 
         ## Common use cases
 
         - Display a user's favorite TV shows.
         - Synchronize favorite TV shows across multiple devices.
-        - Build personalized TV show recommendation features.
         - Allow users to browse and manage their saved favorite TV shows.
         - Populate a **My Favorite TV Shows** section in an application.
-
-        ## Notes
-
-        - Only TV shows that the authenticated user has marked as favorites are returned.
-        - If the user has not favorited any TV shows, the `results` array will be empty.
-        - Use the `language` parameter to retrieve localized TV show information.
-        - Use the `sort_by` parameter to control the order in which favorite TV shows are returned.
       operationId: getFavoriteTV
       security:
       - BearerAuth: []
@@ -1097,15 +1075,14 @@ paths:
       - Account
       summary: Lists
       description: |-
-        Retrieves the custom lists created by an authenticated TMDB user. Custom lists allow users to organize movies into personalized collections based on their own themes, interests, or criteria.
+        Retrieves the custom lists created by an authenticated TMDB user. The list allows users to organize movies into personalized collections based on their own themes, interests, or criteria.
 
         ## Prerequisites
 
         Before calling this endpoint, ensure that you have:
 
-        1. Completed the TMDB authentication workflow.
-        2. Obtained a valid `session_id`.
-        3. Retrieved the authenticated user's `account_id`.
+        1. Obtained a valid `session_id`.
+        2. Retrieved the authenticated user's `account_id`.
 
         ## Common use cases
 
@@ -1113,15 +1090,8 @@ paths:
         - Organize movies into themed or personalized collections.
         - Synchronize user-created lists across multiple devices.
         - Retrieve list metadata before requesting detailed list contents.
-        - Build collection management features within an application.
 
-        ## Notes
-
-        - Only custom lists belonging to the authenticated account are returned.
-        - The response contains summary information for each list rather than the movies within the list.
-        - Use the **List** endpoints to retrieve or manage the contents of a specific custom list.
-
-        Tip: A **custom list** differs from a **favorites list** or **watchlist**. Favorites and watchlists are system-managed collections with predefined purposes, whereas custom lists allow users to create their own named collections and organize movies however they choose.
+        > Notes: A **custom list** differs from a **favorites list** or **watchlist**. Favorites and watchlists are system-managed collections with predefined purposes, whereas custom lists allow users to create their own named collections and organize movies however they choose.
 
         For example, a user might create lists such as:
 
@@ -1236,9 +1206,8 @@ paths:
 
         Before calling this endpoint, ensure you have:
 
-        1. Completed the TMDB authentication workflow.
-        2. Obtained a valid `session_id`.
-        3. Retrieved the authenticated user's `account_id`.
+        1. Obtained a valid `session_id`.
+        2. Retrieved the authenticated user's `account_id`.
 
         ## Common use cases
 
@@ -1246,25 +1215,13 @@ paths:
         - Synchronize movie ratings across multiple devices.
         - Allow users to review or update their ratings.
         - Build personalized recommendation features based on user ratings.
-        - Analyze a user's movie preferences.
+       
+        > Notes: This endpoint complements the **Rate Movie** and **Delete Movie Rating** endpoints. After submitting or removing a rating, you can call this endpoint to verify the updated list of rated movies and review the ratings associated with the authenticated account.
 
-        ## Notes
-
-        - Only movies rated by the authenticated user are returned.
-        - If the user has not rated any movies, the `results` array will be empty.
-        - The `rating` field represents the score assigned by the authenticated user, while `vote_average` represents the average rating from all TMDB users.
-        - Use the `language` parameter to retrieve localized movie information.
-
-        Tip: This endpoint complements the **Rate Movie** and **Delete Movie Rating** endpoints. After submitting or removing a rating, you can call this endpoint to verify the updated list of rated movies and review the ratings associated with the authenticated account.
-
-        Note: Unlike the Favorites endpoints, this endpoint returns a field that is unique and especially useful:
+        Unlike the Favorites endpoints, this endpoint returns a field that is unique and especially useful:
 
         - `vote_average` → the average rating from the TMDB community.
         - `rating` → **your authenticated user's personal rating**.
-
-        The response includes movie metadata such as titles, overviews, release dates, posters, popularity scores, average community ratings, and the rating assigned by the authenticated user.
-
-        This endpoint is useful for displaying or managing a user's movie ratings, reviewing previously rated content, and synchronizing ratings across devices.
       operationId: getRatedMovies
       security:
       - BearerAuth: []
@@ -1388,26 +1345,17 @@ paths:
 
         Before calling this endpoint, ensure that you have:
 
-        1. Completed the TMDB authentication workflow.
-        2. Obtained a valid `session_id`.
-        3. Retrieved the authenticated user's `account_id`.
+        1. Obtained a valid `session_id`.
+        2. Retrieved the authenticated user's `account_id`.
 
         ## Common use cases
 
         - Display a user's rated TV shows.
-        - Build a viewing history or activity page.
         - Generate personalized TV recommendations based on user ratings.
         - Synchronize user ratings across multiple devices.
         - Allow users to review and manage their submitted ratings.
 
-        ## Notes
-
-        - Only TV shows rated by the authenticated user are returned.
-        - If the user has not rated any TV shows, the `results` array will be empty.
-        - The `rating` field represents the score assigned by the authenticated user, while `vote_average` represents the average rating from all TMDB users.
-        - Use the `language` parameter to retrieve localized TV show information.
-
-        Tip: This endpoint complements the **Rate TV Show** and **Delete TV Show Rating** endpoints. After submitting, updating, or removing a rating, you can call this endpoint to retrieve the latest list of rated TV shows and verify that the changes have been applied successfully. You can also use it to synchronize rating data across multiple devices or applications. The response includes TV show metadata such as titles, overviews, first air dates, popularity scores, average community ratings, and the rating assigned by the authenticated user.
+        > Notes: This endpoint complements the **Rate TV Show** and **Delete TV Show Rating** endpoints. After submitting, updating, or removing a rating, you can call this endpoint to retrieve the latest list of rated TV shows and verify that the changes have been applied successfully.
       operationId: getRatedTV
       security:
       - BearerAuth: []
@@ -1532,9 +1480,8 @@ paths:
 
         Before calling this endpoint, ensure that you have:
 
-        1. Completed the TMDB authentication workflow.
-        2. Obtained a valid `session_id`.
-        3. Retrieved the authenticated user's `account_id`.
+        1. Obtained a valid `session_id`.
+        2. Retrieved the authenticated user's `account_id`.
 
         ## Common use cases
 
@@ -1544,14 +1491,7 @@ paths:
         - Synchronize user ratings across multiple devices.
         - Allow users to review and manage ratings for individual episodes.
 
-        ## Notes
-
-        - Only TV episodes rated by the authenticated user are returned.
-        - If the user has not rated any TV episodes, the `results` array will be empty.
-        - The `rating` field represents the score assigned by the authenticated user, while `vote_average` represents the average rating from all TMDB users.
-        - Use the `language` parameter to retrieve localized episode information.
-
-        Tip: Unlike the **Rated TV Shows** endpoint, which returns ratings for an entire series, this endpoint returns ratings for **individual episodes**. This distinction is useful for applications that track viewing progress, display episode-specific feedback, or analyze user engagement at a more granular level. The response includes episode-specific metadata such as the episode name, season number, episode number, air date, overview, average community rating, and the rating assigned by the authenticated user.
+        > Notes: Unlike the **Rated TV Shows** endpoint, which returns ratings for an entire series, this endpoint returns ratings for **individual episodes**. This distinction is useful for applications that track viewing progress, display episode-specific feedback, or analyze user engagement at a more granular level.
       operationId: getRatedTVEpisodes
       security:
       - BearerAuth: []
@@ -1677,26 +1617,17 @@ paths:
 
         Before calling this endpoint, ensure that you have:
 
-        1. Completed the TMDB authentication workflow.
-        2. Obtained a valid `session_id`.
-        3. Retrieved the authenticated user's `account_id`.
+        1. Obtained a valid `session_id`.
+        2. Retrieved the authenticated user's `account_id`.
 
         ## Common use cases
 
         - Display a user's saved movies.
-        - Build a personalized **Watch Later** feature.
         - Synchronize watchlists across multiple devices.
         - Help users manage movies they plan to watch.
         - Recommend content based on a user's planned viewing list.
 
-        ## Notes
-
-        - Only movies added to the authenticated user's watchlist are returned.
-        - If the watchlist is empty, the `results` array will be empty.
-        - Use the `language` parameter to retrieve localized movie information.
-        - Use the `sort_by` parameter to control the order in which watchlisted movies are returned.
-
-        Tip: A **watchlist** is different from **favorites**. A watchlist is intended for movies that a user plans to watch in the future, while favorites represent movies the user has already watched and chosen to save because they particularly enjoyed them. The response includes movie metadata such as titles, overviews, release dates, popularity scores, average user ratings, and poster information.
+        > Notes: A **watchlist** is different from **favorites**. A watchlist is intended for movies that a user plans to watch in the future, while favorites represent movies the user has already watched and chosen to save because they particularly enjoyed them.
       operationId: getWatchlistMovies
       security:
       - BearerAuth: []
@@ -1820,15 +1751,8 @@ paths:
 
         Before calling this endpoint, ensure that you have:
 
-        1. Completed the TMDB authentication workflow.
-        2. Obtained a valid `session_id`.
-        3. Retrieved the authenticated user's `account_id`.
-
-        The request body must include:
-
-        - `media_type` (`movie` or `tv`)
-        - `media_id`
-        - `watchlist`
+        1. Obtained a valid `session_id`.
+        2. Retrieved the authenticated user's `account_id`.
 
         ## Common use cases
 
@@ -1838,14 +1762,7 @@ paths:
         - Build personalized **Watch Later** experiences.
         - Enable users to manage their planned viewing list.
 
-        ## Notes
-
-        - Setting `watchlist` to `true` adds the specified movie or TV show to the user's watchlist.
-        - Setting `watchlist` to `false` removes the item from the watchlist.
-        - Only authenticated users can modify their watchlist.
-        - Use the **Watchlist Movies** and **Watchlist TV** endpoints to retrieve the updated watchlist after making changes.
-
-        Tip: This endpoint updates a user's watchlist but does not return the updated list of watchlisted items. After successfully adding or removing a movie or TV show, call the **Watchlist Movies** or **Watchlist TV** endpoint to retrieve the current contents of the user's watchlist and confirm that the change has been applied.
+        > Notes: Setting `watchlist` to `true` adds the specified movie or TV show to the user's watchlist while `watchlist` to `false` removes the item. Also, this endpoint updates a user's watchlist but does not return the updated list of watchlisted items. After successfully adding or removing a movie or TV show, call the **Watchlist Movies** or **Watchlist TV** endpoint to retrieve the current contents of the user's watchlist and confirm that the change has been applied.
       operationId: addToWatchlist
       security:
       - BearerAuth: []
@@ -1980,27 +1897,18 @@ paths:
         ## Prerequisites
 
         Before calling this endpoint, ensure you have:
-
-        1. Completed the TMDB authentication workflow.
-        2. Obtained a valid `session_id`.
-        3. Retrieved the authenticated user's `account_id`.
+        
+        1. Obtained a valid `session_id`.
+        2. Retrieved the authenticated user's `account_id`.
 
         ## Common use cases
 
         - Display a user's saved TV shows.
         - Build a personalized **Watch Later** feature for TV content.
         - Synchronize TV watchlists across multiple devices.
-        - Help users manage TV shows they intend to watch.
         - Recommend content based on a user's planned viewing list.
 
-        ## Notes
-
-        - Only TV shows added to the authenticated user's watchlist are returned.
-        - If the watchlist is empty, the `results` array will be empty.
-        - Use the `language` parameter to retrieve localized TV show information.
-        - Use the `sort_by` parameter to control the order in which watchlisted TV shows are returned.
-
-        Tip: This endpoint retrieves the current contents of a user's TV watchlist. To add or remove TV shows from the watchlist, use the **Add to Watchlist** endpoint. After successfully updating the watchlist, call this endpoint to retrieve the latest watchlisted TV shows and confirm that the changes have been applied. The response includes TV show metadata such as the series name, overview, first air date, popularity score, average community rating, and poster information.
+        > Notes: This endpoint retrieves the current contents of a user's TV watchlist. To add or remove TV shows from the watchlist, use the **Add to Watchlist** endpoint. After successfully updating the watchlist, call this endpoint to retrieve the latest watchlisted TV shows and confirm that the changes have been applied.
       operationId: getWatchlistTV
       security:
       - BearerAuth: []
