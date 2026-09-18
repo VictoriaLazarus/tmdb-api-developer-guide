@@ -44,7 +44,7 @@ paths:
       - Authentication
       summary: Validate key
       description: |-
-        Validates your TMDB API credentials by confirming that the supplied API key or access token is recognized and authorized to access the TMDB API.
+        Validates your TMDB API credentials by confirming that the supplied API key or access token is recognized and authorized.
 
         > Note: You only need your Bearer token or API key for this endpoint.
 
@@ -106,13 +106,6 @@ paths:
 
         > Note: You only need your Bearer token or API key for this endpoint.
 
-        ## Common use cases
-
-        - Start the TMDB user authentication workflow.
-        - Obtain user authorization before creating a session.
-        - Enable access to user-specific endpoints such as Favorites, Watchlists, Ratings, and Account Details.
-        - Authenticate users in applications that require personalized TMDB features.
-
         ## Authentication workflow
 
         After generating a request token:
@@ -125,18 +118,11 @@ paths:
 
         Replace `{request_token}` with the value returned by this endpoint.
 
-        1. Sign in to TMDB (if prompted).
-        2. Select **Approve** to authorize your application.
-        3. Use the validated request token to create a user session.
+        2. Sign in to TMDB (if prompted).
+        3. Select **Approve** to authorize your application.
+        4. Use the validated request token to create a user session.
 
-        ## Notes
-
-        - A request token **must be approved** before it can be exchanged for a session ID.
-        - The approval step can be completed in a web browser.
-        - The request token expires after a period of time. If this happens before approval or session creation, generate a new one.
-        - An unapproved or expired request token cannot be used to create a session.
-
-        Also, a request token alone does not authenticate a user. It simply initiates the authentication process.
+        > Notes: A request token alone does not authenticate a user. It simply initiates the authentication process.
 
         The complete workflow is:
 
