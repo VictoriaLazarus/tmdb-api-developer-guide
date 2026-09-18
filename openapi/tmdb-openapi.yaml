@@ -182,8 +182,6 @@ paths:
       description: |-
         Creates a v3 `session_id` by exchanging a previously validated request token. The returned ID represents an authenticated TMDB user session and is required to access account-specific endpoints.
 
-        > **Note**: This endpoint is the final step in the standard TMDB v3 authentication workflow.
-
         ## Prerequisites
 
         Before calling this API, ensure you have:
@@ -199,15 +197,9 @@ paths:
 
         ## Common use cases
 
-        - Complete the TMDB v3 authentication workflow.
-        - Create an authenticated user session.
         - Access account-specific endpoints such as Favorites, Watchlists, Ratings, and Account Details.
         - Maintain an authenticated session across multiple API requests.
         - Enable personalized features within an application.
-
-        ## Notes
-
-        **Note:** A `session_id` represents an authenticated TMDB user session. Store it securely and reuse it for subsequent authenticated requests instead of creating a new session for every API call. If the user signs out or the session is no longer needed, invalidate it using the **Delete Session** endpoint.
       operationId: createSession
       security:
       - BearerAuth: []
@@ -271,14 +263,7 @@ paths:
       description: |-
         Creates a temporary guest session and returns a unique ID that allows users who are not signed in to perform supported actions, such as rating movies and TV shows.
 
-        > Note: Guest sessions are intended for anonymous users and do not provide access to account-specific features such as favorites, watchlists, or account states. Also, guest sessions provide limited permissions and should not be used as a substitute for a standard authenticated user session.
-
-        ## Common use cases
-
-        - Allow anonymous users to rate movies or TV shows.
-        - Support temporary user interactions without requiring account registration.
-        - Enable quick onboarding experiences by postponing sign-in.
-        - Collect ratings from users who do not wish to create a TMDB account.
+        > Note: Guest sessions are intended for anonymous users and provide limited permissions. It should not be used as a substitute for a standard authenticated user session.
 
         ## Guest session vs. standard user session
 
@@ -345,11 +330,8 @@ paths:
 
         Before calling this API, ensure you have:
 
-        - A valid user-authorized v4 access token.
-        - A v4 access token with write permission.
-
-        > **Note:** Do not use your standard TMDB **Read Access Token**, as it is intended for application authentication and cannot be exchanged for a v3 session.
-
+        - A valid user-authorized v4 access token with write permission
+        
         ## Common use cases
 
         - Convert an authenticated v4 user session into a v3 session.
@@ -357,14 +339,7 @@ paths:
         - Support applications that integrate both the TMDB v3 and v4 APIs.
         - Reuse an existing authenticated v4 user session without repeating the v3 authentication workflow.
 
-        ## Notes
-
-        - This endpoint is intended for applications using the TMDB v4 authentication workflow.
-        - The supplied v4 access token must be authorized and include write permission.
-        - A standard TMDB Read Access Token cannot be used to create a v3 session.
-        - The returned `session_id` can be used with any v3 endpoint that requires session-based authentication.
-
-        Also, most applications using only the TMDB v3 API do not need this endpoint. Use **Create Session** if you are following the standard v3 authentication workflow. This endpoint is primarily intended for applications that authenticate users through the TMDB v4 API but need to interact with v3 endpoints that require a `session_id`.
+        > **Note:** Most applications using only the TMDB v3 API do not need this endpoint. This endpoint is primarily intended for applications that authenticate users through the TMDB v4 API but need to interact with v3 endpoints that require a `session_id`.
       operationId: createSessionFromV4Token
       security:
       - BearerAuth: []
@@ -433,14 +408,15 @@ paths:
         2. A valid TMDB username and password for the user.
         3. A request token that has not expired.
 
-        > **Note**: Once the request token has been successfully validated, it can be exchanged for a v3 session ID, allowing your application to access authenticated, user-specific resources such as account details, favorites, watchlists, ratings, and account states. Unlike the browser-based approval flow, this endpoint validates the request token programmatically by submitting the user's TMDB credentials directly to the API.
+        > **Note**: Unlike the browser-based approval flow, this endpoint validates the request token programmatically by submitting the user's TMDB credentials directly to the API.
 
         ## Common use cases
 
         - Validate a request token without redirecting users to the TMDB website.
-        - Support server-side authentication workflows.
-        - Authenticate users before creating a session.
         - Prepare a validated request token for the **Create Session** endpoint.
+
+         <img src="/assets/images/secure-api-access.png" width="579" height="272" />
+
 
         ## Browser approval vs. `validate_with_login`
 
@@ -452,17 +428,6 @@ paths:
         | No user credentials pass through your application. | User credentials are included in the request body. |
         | May redirect the user to TMDB. | Validation occurs entirely through the API. |
         | Returns a validated request token. | Returns a validated request token. |
-
-        Both approaches produce the same result: a validated request token that can be used to create a session.
-
-        <img src="/assets/images/secure-api-access.png" width="579" height="272" />
-
-        ## Notes
-
-        - This endpoint **does not create a session ID**.
-        - A successfully validated request token must be passed to the **Create Session** endpoint to obtain a `session_id`.
-        - If the request token expires before a session is created, generate a new token and repeat the validation process.
-        - Once a request token has been successfully exchanged for a session, it cannot be reused.
       operationId: createSessionWithLogin
       security:
       - BearerAuth: []
@@ -532,11 +497,11 @@ paths:
     get:
       tags:
       - Authentication
-      summary: Account Details
+      summary: Account
       description: |-
         Returns account metadata, including the account identifier required by many account-specific requests.
 
-        > **Note**: Before calling this endpoint, you need a valid `session_id` that has not already expired. The session_id must be generated through the TMDB authentication workflow. Requests made with an invalid or expired session ID will return an authentication error.
+        > **Note**: Before calling this endpoint, you need a valid `session_id` that has not already expired.
 
         ## Common use cases
 
@@ -5792,11 +5757,10 @@ paths:
       - Authentication
       summary: Delete Session
       description: "Deletes an active v3 session, immediately invalidating the associated `session_id`.\n\
-        \n> **Note**: Before calling this endpoint, ensure that you have a valid `session_id` that has\
-        \ not already expired. Also, once the session has been deleted, it can no longer be used to access\
+        \n> **Note**: Once the session has been deleted, it can no longer be used to access\
         \ authenticated TMDB endpoints that require session-based authentication.\n\n## Common use cases\n\
         \n- Sign a user out of an application.\n- End an authenticated session after account operations\
-        \ are complete.\n- Invalidate sessions that are no longer needed.\n- Improve application security\
+        \ are complete.\n- Improve application security\
         \ by preventing reuse of an active session.\n- Support logout functionality across web and mobile\
         \ applications.        "
       operationId: deleteSession
