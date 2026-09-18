@@ -46,7 +46,7 @@ paths:
       description: |-
         Validates your TMDB API credentials by confirming that the supplied API key or access token is recognized and authorized.
 
-        > Note: You only need your Bearer token or API key for this endpoint.
+        > **Note**: You only need your Bearer token or API key for this endpoint.
 
         ## Common use cases
 
@@ -104,7 +104,7 @@ paths:
       description: |-
         Generates a temporary request token used in the TMDB user authentication workflow.
 
-        > Note: You only need your Bearer token or API key for this endpoint.
+        > **Note**: You only need your Bearer token or API key for this endpoint.
 
         ## Authentication workflow
 
@@ -122,7 +122,7 @@ paths:
         3. Select **Approve** to authorize your application.
         4. Use the validated request token to create a user session.
 
-        > Notes: A request token alone does not authenticate a user. It simply initiates the authentication process.
+        > **Note**: A request token alone does not authenticate a user. It simply initiates the authentication process.
 
         The complete workflow is:
 
@@ -263,7 +263,7 @@ paths:
       description: |-
         Creates a temporary guest session and returns a unique ID that allows users who are not signed in to perform supported actions, such as rating movies and TV shows.
 
-        > Note: Guest sessions are intended for anonymous users and provide limited permissions. It should not be used as a substitute for a standard authenticated user session.
+        > **Note**: Guest sessions are intended for anonymous users and provide limited permissions. It should not be used as a substitute for a standard authenticated user session.
 
         ## Guest session vs. standard user session
 
@@ -691,9 +691,7 @@ paths:
         - Synchronize favorite content across multiple devices.
         - Create "My Favorites" sections within an application.
 
-        ## Notes
-
-        This endpoint is **idempotent** with respect to the `favorite` field. Sending the same request multiple times with the same value (for example, `favorite: true` for an item that is already favorited) does not create duplicate entries. Likewise, setting `favorite` to `false` for an item that is not currently in the favorites list ensures it is not marked as a favorite.
+        > **Note**: This endpoint is **idempotent** with respect to the `favorite` field. Sending the same request multiple times with the same value (for example, `favorite: true` for an item that is already favorited) does not create duplicate entries. Likewise, setting `favorite` to `false` for an item that is not currently in the favorites list ensures it is not marked as a favorite.
       operationId: addFavorite
       security:
       - BearerAuth: []
@@ -825,7 +823,7 @@ paths:
         - Allow users to browse and manage their saved favorites.
         - Populate a **My Favorite Movies** section in an application.
 
-        > Note: This endpoint is the counterpart to the **Add Favorite** endpoint. After adding or removing a movie from a user's favorites, you can call this endpoint to retrieve the updated favorites list and verify that the operation was successful.
+        > **Note**: This endpoint is the counterpart to the **Add Favorite** endpoint. After adding or removing a movie from a user's favorites, you can call this endpoint to retrieve the updated favorites list and verify that the operation was successful.
       operationId: getFavoriteMovies
       security:
       - BearerAuth: []
@@ -1091,7 +1089,7 @@ paths:
         - Synchronize user-created lists across multiple devices.
         - Retrieve list metadata before requesting detailed list contents.
 
-        > Notes: A **custom list** differs from a **favorites list** or **watchlist**. Favorites and watchlists are system-managed collections with predefined purposes, whereas custom lists allow users to create their own named collections and organize movies however they choose.
+        > **Note**: A **custom list** differs from a **favorites list** or **watchlist**. Favorites and watchlists are system-managed collections with predefined purposes, whereas custom lists allow users to create their own named collections and organize movies however they choose.
 
         For example, a user might create lists such as:
 
@@ -1216,7 +1214,7 @@ paths:
         - Allow users to review or update their ratings.
         - Build personalized recommendation features based on user ratings.
        
-        > Notes: This endpoint complements the **Rate Movie** and **Delete Movie Rating** endpoints. After submitting or removing a rating, you can call this endpoint to verify the updated list of rated movies and review the ratings associated with the authenticated account.
+        > **Note**: This endpoint complements the **Rate Movie** and **Delete Movie Rating** endpoints. After submitting or removing a rating, you can call this endpoint to verify the updated list of rated movies and review the ratings associated with the authenticated account.
 
         Unlike the Favorites endpoints, this endpoint returns a field that is unique and especially useful:
 
@@ -1355,7 +1353,7 @@ paths:
         - Synchronize user ratings across multiple devices.
         - Allow users to review and manage their submitted ratings.
 
-        > Notes: This endpoint complements the **Rate TV Show** and **Delete TV Show Rating** endpoints. After submitting, updating, or removing a rating, you can call this endpoint to retrieve the latest list of rated TV shows and verify that the changes have been applied successfully.
+        > **Note**: This endpoint complements the **Rate TV Show** and **Delete TV Show Rating** endpoints. After submitting, updating, or removing a rating, you can call this endpoint to retrieve the latest list of rated TV shows and verify that the changes have been applied successfully.
       operationId: getRatedTV
       security:
       - BearerAuth: []
@@ -1491,7 +1489,7 @@ paths:
         - Synchronize user ratings across multiple devices.
         - Allow users to review and manage ratings for individual episodes.
 
-        > Notes: Unlike the **Rated TV Shows** endpoint, which returns ratings for an entire series, this endpoint returns ratings for **individual episodes**. This distinction is useful for applications that track viewing progress, display episode-specific feedback, or analyze user engagement at a more granular level.
+        > **Note**: Unlike the **Rated TV Shows** endpoint, which returns ratings for an entire series, this endpoint returns ratings for **individual episodes**. This distinction is useful for applications that track viewing progress, display episode-specific feedback, or analyze user engagement at a more granular level.
       operationId: getRatedTVEpisodes
       security:
       - BearerAuth: []
@@ -1627,7 +1625,7 @@ paths:
         - Help users manage movies they plan to watch.
         - Recommend content based on a user's planned viewing list.
 
-        > Notes: A **watchlist** is different from **favorites**. A watchlist is intended for movies that a user plans to watch in the future, while favorites represent movies the user has already watched and chosen to save because they particularly enjoyed them.
+        > **Note**: A **watchlist** is different from **favorites**. A watchlist is intended for movies that a user plans to watch in the future, while favorites represent movies the user has already watched and chosen to save because they particularly enjoyed them.
       operationId: getWatchlistMovies
       security:
       - BearerAuth: []
@@ -1762,7 +1760,7 @@ paths:
         - Build personalized **Watch Later** experiences.
         - Enable users to manage their planned viewing list.
 
-        > Notes: Setting `watchlist` to `true` adds the specified movie or TV show to the user's watchlist while `watchlist` to `false` removes the item. Also, this endpoint updates a user's watchlist but does not return the updated list of watchlisted items. After successfully adding or removing a movie or TV show, call the **Watchlist Movies** or **Watchlist TV** endpoint to retrieve the current contents of the user's watchlist and confirm that the change has been applied.
+        > **Note**: Setting `watchlist` to `true` adds the specified movie or TV show to the user's watchlist while `watchlist` to `false` removes the item. Also, this endpoint updates a user's watchlist but does not return the updated list of watchlisted items. After successfully adding or removing a movie or TV show, call the **Watchlist Movies** or **Watchlist TV** endpoint to retrieve the current contents of the user's watchlist and confirm that the change has been applied.
       operationId: addToWatchlist
       security:
       - BearerAuth: []
@@ -1908,7 +1906,7 @@ paths:
         - Synchronize TV watchlists across multiple devices.
         - Recommend content based on a user's planned viewing list.
 
-        > Notes: This endpoint retrieves the current contents of a user's TV watchlist. To add or remove TV shows from the watchlist, use the **Add to Watchlist** endpoint. After successfully updating the watchlist, call this endpoint to retrieve the latest watchlisted TV shows and confirm that the changes have been applied.
+        > **Note**: This endpoint retrieves the current contents of a user's TV watchlist. To add or remove TV shows from the watchlist, use the **Add to Watchlist** endpoint. After successfully updating the watchlist, call this endpoint to retrieve the latest watchlisted TV shows and confirm that the changes have been applied.
       operationId: getWatchlistTV
       security:
       - BearerAuth: []
@@ -2036,7 +2034,7 @@ paths:
         - Interpret certification values returned by movie-related endpoints.
         - Configure region-specific content filtering.
 
-        ## Notes
+        ## Note
 
         - Certification ratings are grouped by ISO 3166-1 country codes (for example, `US`, `GB`, `DE`, and `FR`).
         - Certification systems vary by country, so the available ratings differ between regions.
@@ -2106,7 +2104,7 @@ paths:
         - Map TMDB TV certification codes to user-facing descriptions.
         - Retrieve the rating systems supported for different countries or regions.
 
-        > Notes: Certification data is grouped by country or region. The certification list may be updated as TMDB updates its supported rating systems.
+        > **Note**: Certification data is grouped by country or region. The certification list may be updated as TMDB updates its supported rating systems.
       operationId: getTVCertifications
       security:
       - BearerAuth: []
@@ -2148,7 +2146,7 @@ paths:
         - Retrieve collection metadata before requesting collection details.
         - Navigate users to related movies within a franchise.
 
-        > Notes: Collections represent groups of related movies that belong to the same franchise or series, such as trilogies or cinematic universes.
+        > **Note**: Collections represent groups of related movies that belong to the same franchise or series, such as trilogies or cinematic universes.
       operationId: searchCollections
       security:
       - BearerAuth: []
@@ -2220,7 +2218,7 @@ paths:
       description: |-
         Searches TMDB production companies using their original or alternative names. Production companies are organizations involved in the creation, financing, or distribution of movies and TV shows.
 
-        > Note: `logo_path` is an image path rather than a complete image URL. Your application must combine it with TMDB's image base URL to display the company's logo.
+        > **Note**: `logo_path` is an image path rather than a complete image URL. Your application must combine it with TMDB's image base URL to display the company's logo.
 
         ## Common use cases
 
@@ -2300,7 +2298,7 @@ paths:
       description: |-
         Searches TMDB keywords by name. Keywords are descriptive tags that represent themes, topics, locations, events, or other notable attributes and are associated with movies and TV shows.
 
-        > Note: Keywords provide more specific themes, concepts, or descriptive tags than genres. For example, you can use`superhero, time travel`, or `space travel` as keywords to describe specific aspects of a movie.
+        > **Note**: Keywords provide more specific themes, concepts, or descriptive tags than genres. For example, you can use`superhero, time travel`, or `space travel` as keywords to describe specific aspects of a movie.
 
         ## Common use cases
 
@@ -2309,7 +2307,7 @@ paths:
         - Filter movies or TV shows by theme or topic using Discover endpoints.
         - Build keyword search or autocomplete functionality.
 
-        > Note: The returned keyword ID can be used with other TMDB endpoints, such as **Discover Movies** and **Discover TV**, to filter content by keyword.
+        > **Note**: The returned keyword ID can be used with other TMDB endpoints, such as **Discover Movies** and **Discover TV**, to filter content by keyword.
       operationId: searchKeywords
       security:
       - BearerAuth: []
@@ -2386,7 +2384,7 @@ paths:
         - Filter search results by release year, language, or region.
         - Allow users to quickly locate movies within an application.
 
-        > Note: The `release_date` field may be empty when TMDB does not have a release date for a movie. Similarly, some metadata may vary depending on the information available for the movie and the language or region specified in the request.
+        > **Note**: The `release_date` field may be empty when TMDB does not have a release date for a movie. Similarly, some metadata may vary depending on the information available for the movie and the language or region specified in the request.
       operationId: searchMovies
       security:
       - BearerAuth: []
@@ -2493,7 +2491,7 @@ paths:
         - Reduce the number of API requests by searching multiple resource types at once.
         - Provide users with comprehensive search results from a single query.
 
-        > Note: Each result includes a `media_type` field indicating whether the resource is a `movie`, `tv`, or `person`. Use the returned TMDB IDs with the corresponding Movie, TV, or People endpoints to retrieve additional information.
+        > **Note**: Each result includes a `media_type` field indicating whether the resource is a `movie`, `tv`, or `person`. Use the returned TMDB IDs with the corresponding Movie, TV, or People endpoints to retrieve additional information.
       operationId: searchMulti
       security:
       - BearerAuth: []
@@ -2585,7 +2583,7 @@ paths:
         - Retrieve a person's TMDB ID for use with the People endpoints.
         - Display cast and crew search results within an application.
 
-        > Notes: Use the returned ID value with the **People** collection to retrieve detailed information about a person, including their biography, movie and TV credits, images, external IDs, and social media links (where available).
+        > **Note**: Use the returned ID value with the **People** collection to retrieve detailed information about a person, including their biography, movie and TV credits, images, external IDs, and social media links (where available).
       operationId: searchPeople
       security:
       - BearerAuth: []
@@ -2822,7 +2820,7 @@ paths:
 
         Using this logic allows developers to create more flexible and precise discovery queries.
 
-        > Note: This endpoint supports more than 30 query parameters. The parameters listed above are the most commonly used. Refer to the TMDB API reference for the complete list of supported filters and sorting options.
+        > **Note**: This endpoint supports more than 30 query parameters. The parameters listed above are the most commonly used. Refer to the TMDB API reference for the complete list of supported filters and sorting options.
       operationId: discoverMovies
       security:
       - BearerAuth: []
@@ -3102,7 +3100,7 @@ paths:
       description: |-
         Discovers TV shows by applying one or more filtering and sorting criteria instead of a search query.
 
-        > Note: This endpoint retrieves public TMDB data and does not require a `session_id` or `account_id`.
+        > **Note**: This endpoint retrieves public TMDB data and does not require a `session_id` or `account_id`.
 
         ## Common use cases
 
@@ -3146,7 +3144,7 @@ paths:
         - `with_genres=18,10765` returns TV shows that are both **Drama** and **Sci-Fi & Fantasy**.
         - `with_genres=18|10765` returns TV shows that are **Drama** or **Sci-Fi & Fantasy**.
 
-        > Note: The Discover TV endpoint supports many of the same filtering and sorting options as **Discover Movies**. However, TV-specific parameters such as `first_air_date_year`, `first_air_date.gte`, and `first_air_date.lte` replace the movie-specific release date parameters. Use the endpoint that corresponds to the type of media you want to discover.
+        > **Note**: The Discover TV endpoint supports many of the same filtering and sorting options as **Discover Movies**. However, TV-specific parameters such as `first_air_date_year`, `first_air_date.gte`, and `first_air_date.lte` replace the movie-specific release date parameters. Use the endpoint that corresponds to the type of media you want to discover.
       operationId: discoverTV
       security:
       - BearerAuth: []
@@ -3407,9 +3405,7 @@ paths:
         - Retrieve localized movie information using the `language` parameter.
         - Fetch related resources using the `append_to_response` parameter.
 
-        ## Notes
-
-        The `append_to_response` parameter is optional but can improve performance by retrieving related resources in a single request. Also, this endpoint retrieves public movie information and does not require a `session_id` or `account_id`.
+        > **Note**: The `append_to_response` parameter is optional but can improve performance by retrieving related resources in a single request. Also, this endpoint retrieves public movie information and does not require a `session_id` or `account_id`.
       operationId: getMovieDetails
       security:
       - BearerAuth: []
@@ -3496,7 +3492,7 @@ paths:
       description: |-
         Retrieves the authenticated user's account-specific state for a particular movie.
 
-        Note: An account state represents the authenticated user's relationship with a specific movie. It indicates whether the user has marked the movie as a favorite, added it to a watchlist, or submitted a personal rating. Unlike public movie metadata, these values are unique to each authenticated user.
+        > **Note**: An account state represents the authenticated user's relationship with a specific movie. It indicates whether the user has marked the movie as a favorite, added it to a watchlist, or submitted a personal rating. Unlike public movie metadata, these values are unique to each authenticated user.
 
         ## Prerequisites
 
@@ -3624,9 +3620,7 @@ paths:
         - Improve search functionality by matching localized or alternative movie names.
         - Build applications that present movie information for global audiences.
 
-        ## Notes
-
-        If the `country` parameter is omitted, the endpoint returns alternative titles from all available countries.
+        > **Note**: If the `country` parameter is omitted, the endpoint returns alternative titles from all available countries.
       operationId: getMovieAlternativeTitles
       security:
       - BearerAuth: []
@@ -3705,9 +3699,7 @@ paths:
         - Monitor changes to movie records over time.
         - Build automated content synchronization workflows.
 
-        ## Notes
-
-        If no date range is specified, TMDB returns recent changes based on its default behavior.
+        > **Note**: If no date range is specified, TMDB returns recent changes based on its default behavior.
       operationId: getMovieChanges
       security:
       - BearerAuth: []
@@ -3953,9 +3945,7 @@ paths:
         | `vote_average` | Average community rating for the image. |
         | `vote_count` | Number of votes received. |
 
-        ## Notes
-
-        If the `language` parameter is specified, TMDB returns images that match that language. Use `include_image_language` to retrieve images in additional languages or images that are not associated with any language.
+        > **Note**: If the `language` parameter is specified, TMDB returns images that match that language. Use `include_image_language` to retrieve images in additional languages or images that are not associated with any language.
       operationId: getMovieImages
       security:
       - BearerAuth: []
@@ -4972,9 +4962,7 @@ paths:
 
         Use the **Videos** endpoint for promotional and multimedia content, and the **Images** endpoint for visual assets.
 
-        ## Notes
-
-        The endpoint returns metadata about videos, not the video files themselves. Applications can use the returned `key` and `site` values to construct links or embedded players for supported platforms uch as YouTube and Vimeo.
+        > **Note**: The endpoint returns metadata about videos, not the video files themselves. Applications can use the returned `key` and `site` values to construct links or embedded players for supported platforms uch as YouTube and Vimeo.
 
         For example, when:
 
@@ -5443,7 +5431,7 @@ paths:
         - Identifying content distributors
         - Supporting content discovery applications
 
-        > Note: Network IDs can be obtained from TV-related endpoints such as `/tv/{tv_id}`, `/tv/popular`, or `/tv/top_rated`. The response from these endpoints includes a `networks` array containing the network's unique identifier.
+        > **Note**: Network IDs can be obtained from TV-related endpoints such as `/tv/{tv_id}`, `/tv/popular`, or `/tv/top_rated`. The response from these endpoints includes a `networks` array containing the network's unique identifier.
 
         Example:
 
