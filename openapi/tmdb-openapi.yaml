@@ -4235,7 +4235,7 @@ paths:
       description: |-
         Retrieves the public TMDB lists that include a specified movie. A TMDB list is a user-created or community-curated collection of movies grouped around a common theme, topic, genre, or purpose.
 
-        > **Note**: a **TMDB list** is different from a **collection** or a **watchlist**:
+        > **Note**: a **TMDB List** is different from a **Collection** or a **Watchlist**:
 
         | Resource | Purpose |
         | --- | --- |
@@ -4350,7 +4350,7 @@ paths:
         - Increase user engagement by suggesting related movies.
         - Create personal recommendation carousels and browsing features.
         
-        > **Note**: Recommendation results are generated dynamically by TMDB and may change over time as new movies are added and the recommendation algorithm is updated. Therefore, applications should treat recommendations as dynamic content rather than a fixed set of related movies.
+        > **Note**: **Recommendation** results are generated dynamically by TMDB and may change over time as new movies are added and the recommendation algorithm is updated. Therefore, applications should treat recommendations as dynamic content rather than a fixed set of related movies.
       operationId: getMovieRecommendations
       security:
       - BearerAuth: []
@@ -4478,9 +4478,9 @@ paths:
         }
         ```
 
-        This means that the movie received a **PG-13** content rating, and this particular release record represents its **digital release**.
+        This means that the movie received a **PG-13** content rating, and this particular release record represents its digital release.
 
-        > **Note**: If your application only needs the movie's primary release date, use the **Get Movie Details** endpoint. Use **Get Release Dates** when you need comprehensive release information across multiple countries, release channels, or content rating systems. But keep in mind that a **single country can contain multiple release records.** For example, the United States may have separate entries for a limited theatrical release, a wide theatrical release, a digital release, and a physical media release.
+        > **Note**: If your application only needs the movie's primary release date, use the **Get Movie Details** endpoint. Use **Get Release Dates** when you need comprehensive release information across multiple countries, release channels, or content rating systems. But keep in mind that a single country can contain multiple release records. For example, the United States may have separate entries for a limited theatrical release, a wide theatrical release, a digital release, and a physical media release.
       
         ## Common use cases
         - Display country-specific release dates.
@@ -4680,7 +4680,7 @@ paths:
 
         For example, if a user requests similar movies for _Fight Club_, the results may include films with comparable themes, tone, or subject matter. Recommendations, however, may include movies frequently associated with _Fight Club_ by TMDB users, even if they are not closely related in genre or plot.
 
-        > **Note**: Unlike the Recommendations endpoint, which may be influenced by user engagement and recommendation algorithms, the Similar Movies endpoint focuses on content-based relationships between movies.
+        > **Note**: Unlike the **Recommendations** endpoint, which may be influenced by user engagement and recommendation algorithms, the **Similar Movies** endpoint focuses on content-based relationships between movies.
         
         ## Common use cases
 
@@ -4828,7 +4828,7 @@ paths:
         - Populate language selectors in applications.
         - Manage localized movie metadata.
 
-        > **Note**: Use this endpoint to **discover which translations are available** for a movie. Once you've identified the language you need, you can request the **Movie Details** endpoint with the corresponding `language` query parameter to retrieve a localized version of the movie metadata.
+        > **Note**: Use this endpoint to discover which translations are available for a movie. Once you've identified the language you need, you can request the **Movie Details** endpoint with the corresponding `language` query parameter to retrieve a localized version of the movie metadata.
       operationId: getMovieTranslations
       security:
       - BearerAuth: []
@@ -5022,7 +5022,7 @@ paths:
       - Movies
       summary: Watch Providers
       description: |-
-        Retrieves streaming, rental, and purchase provider information for a movie across supported regions. This endpoint enables applications to display where users can watch, rent, or buy a movie based on their location.
+        Retrieves streaming, rental, and purchase provider information for a movie across supported regions.
 
         ## Availability types
 
@@ -5030,7 +5030,7 @@ paths:
 
         | Type | Description |
         | --- | --- |
-        | flatrate | Available through a subscription service |
+        | flat-rate | Available through a subscription service |
         | rent | Available for rental |
         | buy | Available for purchase |
 
@@ -5092,8 +5092,6 @@ paths:
         - Rental platforms
         - Purchase options
         - Regional availability
-
-        Use this endpoint when users need to know **where a movie can be watched**, rather than information about the movie itself.
 
         > **Note**: Watch provider availability is region-specific. Applications should inspect the country code within the response and display provider information relevant to the user's location. A movie may be available on different streaming services depending on the user's location.
 
@@ -5166,8 +5164,6 @@ paths:
       description: |-
         Submits a user or guest rating for a movie. Ratings must be between 0.5 and 10.0 and require either a valid session ID or a guest session ID for authentication.
 
-        > **Note**: This endpoint requires user authentication and performs a write operation.
-
         ## Related endpoints
 
         | Endpoint | Purpose |
@@ -5183,9 +5179,7 @@ paths:
         - Track user preferences
         - Support review and rating systems
 
-        > **Note**: Provide either `session_id` or `guest_session_id`, depending on the authentication method being used.
-
-        Ratings must be submitted in increments of **0.5** and fall within the range **0.5 to 10.0**.
+        > **Note**: Ratings must be submitted in increments of **0.5** and fall within the range **0.5 to 10.0**.
 
         Valid ratings: `0.5`, `1.0`, `5.5`, `8.0`, `9.5`, `10.0`.
 
@@ -5287,7 +5281,7 @@ paths:
         | `/authentication/session/new` | Create a user session |
         | `/authentication/guest_session/new` | Create a guest session |
 
-        > **Note**: Provide either `session_id` or `guest_session_id`, depending on how the rating was originally created. Only the user or guest session that created the rating can delete it. After a rating is removed, it will no longer appear in the user's account details for that movie.
+        > **Note**: Only the user or guest session that created the rating can delete it. After a rating is removed, it will no longer appear in the user's account details for that movie.
 
         ## Common use cases
 
