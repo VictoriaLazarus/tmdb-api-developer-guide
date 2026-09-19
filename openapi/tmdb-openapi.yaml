@@ -4235,22 +4235,7 @@ paths:
       description: |-
         Retrieves the public TMDB lists that include a specified movie. A TMDB list is a user-created or community-curated collection of movies grouped around a common theme, topic, genre, or purpose.
 
-        ## Common use cases
-
-        - Discover community-curated movie collections.
-        - Recommend movies based on shared user-created lists.
-        - Explore themed movie lists (for example, "Best Psychological Thrillers" or "Award-Winning Films").
-        - Build recommendation and content discovery features.
-        - Surface user-generated content within an application.
-
-        ## Notes
-
-        - Only **public** TMDB lists are returned.
-        - Private lists are not included in the response.
-        - A movie can belong to multiple public lists.
-        - Results are paginated using the `page` query parameter.
-
-        Also, a **TMDB list** is different from a **collection** or a **watchlist**:
+        > **Note**: a **TMDB list** is different from a **collection** or a **watchlist**:
 
         | Resource | Purpose |
         | --- | --- |
@@ -4259,6 +4244,12 @@ paths:
         | **Watchlist** | A personal list maintained by an authenticated user to keep track of movies they want to watch. |
 
         Understanding this distinction helps you choose the appropriate endpoint based on your application's needs.
+      
+        ## Common use cases
+        - Discover community-curated movie collections.        
+        - Explore themed movie lists (for example, "Best Psychological Thrillers" or "Award-Winning Films").
+        - Build recommendation and content discovery features.
+        - Surface user-generated content within an application.
       operationId: getMovieLists
       security:
       - BearerAuth: []
@@ -4339,14 +4330,6 @@ paths:
       description: |-
         Retrieves movie recommendations for a specified movie, based on TMDB's similarity model rather than the requesting user's viewing history.
 
-        ## Common use cases
-
-        - Build **"You May Also Like"** sections.
-        - Display personalized movie recommendations.
-        - Enhance content discovery experiences.
-        - Increase user engagement by suggesting related movies.
-        - Create recommendation carousels and browsing features.
-
         ## Recommendations vs. similar movies
 
         Although both endpoints return related movies, they are designed for different purposes.
@@ -4358,9 +4341,16 @@ paths:
         | Focuses on helping users discover movies they are likely to enjoy. | Focuses on identifying movies that share similar content or characteristics. |
         | Results may include movies from different genres if they are strongly related by user behavior. | Results generally share more direct thematic or genre similarities. |
 
-        Tip: If your goal is to help users discover additional movies they are likely to enjoy based on TMDB's recommendation engine, this endpoint is your best bet. However, if your application instead needs movies that closely resemble the selected movie in terms of genres, themes, or other metadata, consider using the **Similar Movies** endpoint.
+        > **Note**: If your goal is to help users discover additional movies they are likely to enjoy based on TMDB's recommendation engine, this endpoint is your best bet. However, if your application instead needs movies that closely resemble the selected movie in terms of genres, themes, or other metadata, consider using the **Similar Movies** endpoint.
+       
+        ## Common use cases
 
-        Note: Recommendation results are generated dynamically by TMDB and may change over time as new movies are added and the recommendation algorithm is updated. Therefore, applications should treat recommendations as dynamic content rather than a fixed set of related movies.
+        - Build **"You May Also Like"** sections.
+        - Enhance content discovery experiences.
+        - Increase user engagement by suggesting related movies.
+        - Create personal recommendation carousels and browsing features.
+        
+        > **Note**: Recommendation results are generated dynamically by TMDB and may change over time as new movies are added and the recommendation algorithm is updated. Therefore, applications should treat recommendations as dynamic content rather than a fixed set of related movies.
       operationId: getMovieRecommendations
       security:
       - BearerAuth: []
@@ -4441,14 +4431,6 @@ paths:
       description: |-
         Retrieves the release information for a specific movie across different countries and distribution channels.
 
-        ## Common use cases
-
-        - Display country-specific release dates.
-        - Show regional age ratings.
-        - Build localized movie catalogs.
-        - Track theatrical, digital, television, and physical releases.
-        - Determine when a movie became available in a particular market.
-
         ## Release types
 
         TMDB classifies releases using the following numeric values:
@@ -4498,7 +4480,14 @@ paths:
 
         This means that the movie received a **PG-13** content rating, and this particular release record represents its **digital release**.
 
-        Tip: If your application only needs the movie's primary release date, use the **Get Movie Details** endpoint. Use **Get Release Dates** when you need comprehensive release information across multiple countries, release channels, or content rating systems. But keep in mind that a **single country can contain multiple release records.** For example, the United States may have separate entries for a limited theatrical release, a wide theatrical release, a digital release, and a physical media release.
+        > **Note**: If your application only needs the movie's primary release date, use the **Get Movie Details** endpoint. Use **Get Release Dates** when you need comprehensive release information across multiple countries, release channels, or content rating systems. But keep in mind that a **single country can contain multiple release records.** For example, the United States may have separate entries for a limited theatrical release, a wide theatrical release, a digital release, and a physical media release.
+      
+        ## Common use cases
+        - Display country-specific release dates.
+        - Show regional age ratings.
+        - Build localized movie catalogs.
+        - Track theatrical, digital, television, and physical releases.
+        - Determine when a movie became available in a particular market.
       operationId: getMovieReleaseDates
       security:
       - BearerAuth: []
@@ -4561,14 +4550,6 @@ paths:
       description: |-
         Retrieves user-submitted reviews for a movie, including review content, author information, ratings, and publication metadata.
 
-        ## Common use cases
-
-        - Displaying audience reviews
-        - Building movie review sections
-        - Analyzing user sentiment
-        - Enhancing movie recommendation systems
-        - Providing social proof and community feedback
-
         ## Author details
 
         The response may include additional information about the reviewer:
@@ -4579,9 +4560,7 @@ paths:
         | avatar_path | User profile image path |
         | rating | Rating assigned by the reviewer |
 
-        ## Notes
-
-        A movie may have multiple reviews that may differ from the movie's overall average rating.
+        > **Notes**: A movie may have multiple reviews that may differ from the movie's overall average rating.
 
         ### Difference between reviews and ratings
 
@@ -4597,7 +4576,14 @@ paths:
         - Do not include written commentary
         - Are aggregated into the movie's overall rating
 
-        **Note:** The Reviews endpoint returns detailed written feedback from users, whereas the movie's `vote_average` and `vote_count` fields provide aggregated rating statistics without review content.
+        > **Note:** The Reviews endpoint returns detailed written feedback from users, whereas the movie's `vote_average` and `vote_count` fields provide aggregated rating statistics without review content.
+      
+        ## Common use cases
+        - Displaying audience reviews
+        - Building movie review sections
+        - Analyzing user sentiment
+        - Enhancing movie recommendation systems
+        - Providing social proof and community feedback
       operationId: getMovieReviews
       security:
       - BearerAuth: []
@@ -4678,14 +4664,6 @@ paths:
       description: |-
         Retrieves movies that share similar characteristics with a specified movie.
 
-        ## Common use cases
-
-        - Building "Similar Movies" sections
-        - Enhancing content discovery
-        - Generating movie recommendations based on content attributes
-        - Improving user engagement
-        - Creating related-content experiences
-
         ## Difference between Similar and Recommendations
 
         ### Similar movies
@@ -4702,9 +4680,15 @@ paths:
 
         For example, if a user requests similar movies for _Fight Club_, the results may include films with comparable themes, tone, or subject matter. Recommendations, however, may include movies frequently associated with _Fight Club_ by TMDB users, even if they are not closely related in genre or plot.
 
-        ## Notes
+        > **Note**: Unlike the Recommendations endpoint, which may be influenced by user engagement and recommendation algorithms, the Similar Movies endpoint focuses on content-based relationships between movies.
+        
+        ## Common use cases
 
-        Unlike the Recommendations endpoint, which may be influenced by user engagement and recommendation algorithms, the Similar Movies endpoint focuses on content-based relationships between movies.
+        - Building "Similar Movies" sections
+        - Enhancing content discovery
+        - Generating movie recommendations based on content attributes
+        - Improving user engagement
+        - Creating related-content experiences
       operationId: getSimilarMovies
       security:
       - BearerAuth: []
@@ -4783,14 +4767,6 @@ paths:
       description: |-
         Retrieves all available translations for a specific movie, including the title, overview, and tagline in each supported language.
 
-        ## Common use cases
-
-        - Build multilingual applications.
-        - Display localized movie titles and descriptions.
-        - Support users across different countries and languages.
-        - Populate language selectors in applications.
-        - Manage localized movie metadata.
-
         ## Understanding language and region codes
 
         Each translation is identified by both a language and region code.
@@ -4843,8 +4819,16 @@ paths:
         ```
 
         returns the movie details only in French (if available).
+       
+        ## Common use cases
 
-        Tip: Use this endpoint to **discover which translations are available** for a movie. Once you've identified the language you need, you can request the **Movie Details** endpoint with the corresponding `language` query parameter to retrieve a localized version of the movie metadata.
+        - Build multilingual applications.
+        - Display localized movie titles and descriptions.
+        - Support users across different countries and languages.
+        - Populate language selectors in applications.
+        - Manage localized movie metadata.
+
+        > **Note**: Use this endpoint to **discover which translations are available** for a movie. Once you've identified the language you need, you can request the **Movie Details** endpoint with the corresponding `language` query parameter to retrieve a localized version of the movie metadata.
       operationId: getMovieTranslations
       security:
       - BearerAuth: []
@@ -4911,14 +4895,6 @@ paths:
       description: |-
         Retrieves video assets associated with a movie, including trailers, teasers, featurettes, clips, and behind-the-scenes content.
 
-        ## Common use cases
-
-        - Displaying movie trailers
-        - Embedding promotional videos
-        - Building media galleries
-        - Enhancing movie detail pages
-        - Supporting content discovery and marketing features
-
         ## Video types
 
         The `type` field may contain values such as:
@@ -4968,6 +4944,14 @@ paths:
         ```
 
         The `official` field indicates whether a video is officially published by the movie's distributor or studio, making it useful when selecting the most authoritative trailer or promotional content to display.
+     
+        ## Common use cases
+
+        - Displaying movie trailers
+        - Embedding promotional videos
+        - Building media galleries
+        - Enhancing movie detail pages
+        - Supporting content discovery and marketing features
       operationId: getMovieVideos
       security:
       - BearerAuth: []
@@ -5040,14 +5024,6 @@ paths:
       description: |-
         Retrieves streaming, rental, and purchase provider information for a movie across supported regions. This endpoint enables applications to display where users can watch, rent, or buy a movie based on their location.
 
-        ## Common use cases
-
-        - Displaying "Where to Watch" sections
-        - Building streaming availability features
-        - Comparing viewing options across regions
-        - Supporting content discovery applications
-        - Directing users to streaming platforms
-
         ## Availability types
 
         The response categorizes providers into different viewing options:
@@ -5119,13 +5095,15 @@ paths:
 
         Use this endpoint when users need to know **where a movie can be watched**, rather than information about the movie itself.
 
-        ## Notes
+        > **Note**: Watch provider availability is region-specific. Applications should inspect the country code within the response and display provider information relevant to the user's location. A movie may be available on different streaming services depending on the user's location.
 
-        Watch provider availability varies by country and region. A movie may be available on different streaming services depending on the user's location.
+         ## Common use cases
 
-        Not all movies have watch provider information available for every supported region.
-
-        Watch provider availability is region-specific. Applications should inspect the country code within the response and display provider information relevant to the user's location.
+        - Displaying "Where to Watch" sections
+        - Building streaming availability features
+        - Comparing viewing options across regions
+        - Supporting content discovery applications
+        - Directing users to streaming platforms
       operationId: getMovieWatchProviders
       security:
       - BearerAuth: []
@@ -5188,23 +5166,7 @@ paths:
       description: |-
         Submits a user or guest rating for a movie. Ratings must be between 0.5 and 10.0 and require either a valid session ID or a guest session ID for authentication.
 
-        ## Common use cases
-
-        - Allow users to rate movies
-        - Collect audience feedback
-        - Personalize recommendations
-        - Track user preferences
-        - Support review and rating systems
-
-        ## Authentication
-
-        | Requirement | Value |
-        | --- | --- |
-        | Bearer Token | Recommended |
-        | Session ID | Required for authenticated ratings |
-        | Guest Session ID | Required for guest ratings |
-
-        This endpoint requires user authentication and performs a write operation.
+        > **Note**: This endpoint requires user authentication and performs a write operation.
 
         ## Related endpoints
 
@@ -5214,17 +5176,20 @@ paths:
         | `/authentication/session/new` | Create a user session |
         | `/authentication/guest_session/new` | Create a guest session |
 
-        ## Notes
+        ## Common use cases
 
-        Provide either `session_id` or `guest_session_id`, depending on the authentication method being used.
+        - Allow users to rate movies
+        - Collect audience feedback
+        - Track user preferences
+        - Support review and rating systems
+
+        > **Note**: Provide either `session_id` or `guest_session_id`, depending on the authentication method being used.
 
         Ratings must be submitted in increments of **0.5** and fall within the range **0.5 to 10.0**.
 
         Valid ratings: `0.5`, `1.0`, `5.5`, `8.0`, `9.5`, `10.0`.
 
         Invalid ratings: `0`, `4.3`, `10.5`, `11`.
-
-        Unlike most movie endpoints that retrieve data, this endpoint modifies user-specific data and therefore requires authentication through a valid session or guest session. This makes it part of TMDB's authenticated workflow rather than its public data retrieval APIs.
       operationId: addMovieRating
       security:
       - BearerAuth: []
@@ -5312,24 +5277,7 @@ paths:
       description: |-
         Deletes a previously submitted movie rating, identified by the session ID or guest session ID used to create it.
 
-        ## Common use cases
-
-        - Allowing users to remove ratings
-        - Updating user preferences
-        - Resetting movie feedback
-        - Managing account activity
-        - Supporting rating management features
-
-        ## Authentication
-
-        | Requirement | Value |
-        | --- | --- |
-        | Bearer Token | Recommended |
-        | Session ID | Required for authenticated users |
-        | Guest Session ID | Required for guest users |
-
-        This endpoint requires authentication and performs a write operation by modifying user-specific data.
-
+      
         ## Related endpoints
 
         | Endpoint | Purpose |
@@ -5339,13 +5287,14 @@ paths:
         | `/authentication/session/new` | Create a user session |
         | `/authentication/guest_session/new` | Create a guest session |
 
-        ## Notes
+        > **Note**: Provide either `session_id` or `guest_session_id`, depending on how the rating was originally created. Only the user or guest session that created the rating can delete it. After a rating is removed, it will no longer appear in the user's account details for that movie.
 
-        Only the user or guest session that created the rating can delete it. After a rating is removed, it will no longer appear in the user's account details for that movie.
+        ## Common use cases
 
-        Provide either `session_id` or `guest_session_id`, depending on how the rating was originally created.
-
-        This endpoint follows the REST principle of resource deletion. While `POST /movie/{movie_id}/rating` creates or updates a rating, `DELETE /movie/{movie_id}/rating` removes the rating entirely from the user's account history.
+        - Allowing users to remove ratings
+        - Updating user preferences
+        - Managing account activity
+        - Supporting rating management features
       operationId: deleteMovieRating
       security:
       - BearerAuth: []
