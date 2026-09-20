@@ -3,7 +3,7 @@ title: "Your first request"
 description: "Call a live TMDB endpoint and understand what comes back."
 ---
 
-The fastest way to confirm your setup works is to retrieve a single movie. Movie ID `550` is *Fight Club*.
+The quickest way to verify that your setup works is to retrieve a single movie. In this example, you'll request `Fight Club`, which has the TMDB movie ID `550`.
 
 ## Send the request
 
@@ -66,16 +66,8 @@ print(response.json())
 | `genres` | array | Genres associated with the movie. |
 
 <Check>
-A `200` response means your credentials work. If you get a `401`, see [Troubleshooting](/errors/troubleshooting).
+A `200` OK response confirms that the request was successful and that your credentials were accepted. If you receive a `401` Unauthorized response, see [Troubleshooting](/errors/troubleshooting).
 </Check>
-
-## Build an image URL
-
-Image fields such as `poster_path` return a relative path, not a full URL. Combine the base URL, a size, and the path:
-
-```
-https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg
-```
 
 ## What next
 
@@ -84,12 +76,12 @@ https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg
     Find movies, TV shows, and people by name.
   </Card>
   <Card title="Browse with filters" icon="sliders" href="/api-reference">
-    Use Discover to filter by genre, rating, provider, and release window.
+    Use the Discover endpoints to filter movies and TV shows by criteria such as genre, rating, provider, and release date.
   </Card>
   <Card title="Authenticate a user" icon="user-check" href="/authentication/v3-session-flow">
-    Create a session and reach favorites, ratings, and watchlists.
+    Create a user session to access features such as favorites, ratings, and watchlists.
   </Card>
   <Card title="Handle errors" icon="triangle-exclamation" href="/errors/overview">
-    Know what each status code means before you ship.
+    Learn what common HTTP status codes mean and how to troubleshoot failed requests.
   </Card>
 </CardGroup>
