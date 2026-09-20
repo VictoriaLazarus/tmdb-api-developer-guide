@@ -3,7 +3,7 @@ title: "v3 session flow"
 description: "Turn a request token into a session ID that can act on behalf of a user."
 ---
 
-A session ID is what lets your application read and modify a user's TMDB data. Creating one takes four steps.
+A session ID is what lets your application read and modify a user's TMDB data. Follow the steps below to create one.
 
 <Steps>
   <Step title="Validate your credentials">
@@ -31,16 +31,16 @@ A session ID is what lets your application read and modify a user's TMDB data. C
   </Step>
 
   <Step title="Ask the user to approve the token">
-    Send the user to the TMDB approval page, replacing the placeholder with your token:
+    Approve the token so you can generate a session ID. Ensure to replace the placeholder with your token:
 
     ```
     https://www.themoviedb.org/authenticate/REQUEST_TOKEN
     ```
 
-    The user signs in if prompted and selects **Approve**. If your application has a callback URL, append `?redirect_to=https://your-app.example.com/callback` so the user returns to you after approving.
+    > **Note**: If prompted, sign in and selects **Approve**. If your application has a callback URL, append `?redirect_to=https://your-app.example.com/callback` so the user returns to you after approving.
 
     <Warning>
-    A request token that has not been approved cannot be exchanged for a session. This is the single most common cause of a `401` at the next step.
+    An unapproved request token cannot be exchanged for a session. This is the single most common cause of a `401` at the next step.
     </Warning>
   </Step>
 
@@ -61,8 +61,8 @@ A session ID is what lets your application read and modify a user's TMDB data. C
 
 | Approach | How it works | When to use it |
 | --- | --- | --- |
-| Browser approval | The user approves the token on themoviedb.org | Public-facing applications. The user never shares their password with you. |
-| `validate_with_login` | You submit the user's TMDB username and password to validate the token | Trusted internal tools and testing only |
+| Browser approval | Approve the token using a broswer-based approval flow | Public-facing applications. The user never shares their password with you. |
+| `validate_with_login` | Submit the request token together with your TMDB username and password to validate the token. | Trusted internal tools and testing only |
 
 <Warning>
 `validate_with_login` requires your application to handle the user's TMDB password. Prefer browser approval for anything a third party will use.

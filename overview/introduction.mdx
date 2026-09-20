@@ -3,26 +3,26 @@ title: "Introduction"
 description: "What the TMDB API does, how it is organised, and what this guide covers."
 ---
 
-The Movie Database (TMDB) API is a RESTful web service that gives you access to movie, television, person, and account data. You can use it to search for content, retrieve metadata, manage watchlists, rate media, and build personalised entertainment applications.
+The Movie Database (TMDB) API is a RESTful web service that lets you search for content, retrieve metadata, manage user data, and build applications around movies and television. The API returns data in JSON and uses standard HTTP methods such as `GET`, `POST`, and `DELETE`.
 
-The API follows [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) conventions: predictable resource-oriented URLs, JSON request bodies, [JSON-encoded](http://www.json.org/) responses, and standard HTTP methods such as `GET`, `POST`, and `DELETE`.
+This guide walks you through the API from setup and authentication to making requests, reading responses, and handling errors. It also provides runnable examples and field-level response schemas for the documented endpoints.
 
 <Card title="Download the OpenAPI specification" icon="download" href="https://raw.githubusercontent.com/victorialazarus/tmdb-api-developer-guide/main/openapi/tmdb-openapi.yaml">
-  Get the raw `.yaml` file to import into Postman, Insomnia, or your own tooling.
+  Get the raw `.yaml` file to import into Postman, Insomnia, or another OpenAPI-compatible tool.
 </Card>
 
 <CardGroup cols={2}>
   <Card title="Get set up" icon="key" href="/getting-started/prerequisites">
-    Create a TMDB account, get your credentials, and make your first call.
+    Create a TMDB account, get your API credentials, and make your first request.
   </Card>
   <Card title="Authenticate a user" icon="user-check" href="/authentication/overview">
     Exchange a request token for a session ID and unlock account endpoints.
   </Card>
   <Card title="Browse the endpoints" icon="code" href="/api-reference">
-    52 documented endpoints with live parameters, responses, and a playground.
+    Explore 52 documented endpoints with parameters, response schemas, runnable requests, and an API playground.
   </Card>
   <Card title="Handle failures" icon="triangle-exclamation" href="/errors/overview">
-    Status codes, TMDB error codes, and fixes for the failures you will actually hit.
+    Understand HTTP status codes, TMDB error codes, common causes, and endpoint-specific fixes.
   </Card>
 </CardGroup>
 

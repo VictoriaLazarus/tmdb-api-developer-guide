@@ -1,17 +1,19 @@
 ---
 title: "API versions"
-description: "How TMDB API v3 and v4 differ, and which one this guide uses."
+description: "How TMDB API v3 and v4 differ, and why this guide uses v3."
 ---
 
-TMDB supports two authentication models: **API v3** and **API v4**. Both give access to TMDB resources, but they serve different purposes and authenticate differently.
+TMDB provides two API versions, **v3** and **v4**. Both provide access to TMDB resources, but they differ in their endpoints, authentication workflows, and supported features.
 
 ## API v3
 
-API v3 is the original TMDB API and remains the most widely used version. It supports both public data retrieval and authenticated user actions through session-based authentication.
+API v3 is the version used throughout this guide. It provides endpoints for retrieving movie, TV, person, account, search, and other TMDB data.
 
-Read-only endpoints can be authenticated with a Bearer token or an API key. Endpoints that modify user-specific data (ratings, favorites, watchlists) require a valid **v3 session ID**, created through the authentication workflow using a request token approved by the user.
+For application-level access, v3 supports an API key or an API Read Access Token sent as a Bearer token. The Bearer token can be used for requests across both v3 and v4.
 
-This guide uses the v3 workflow throughout:
+For user-specific actions such as rating movies, managing favorites, and updating watchlists, v3 uses a session ID. A session ID can be created by generating a request token, approving it, and exchanging the approved token for a session ID.
+
+This guide uses the v3 workflow for user-authenticated requests:
 
 1. Create a request token.
 2. Approve the request token.
@@ -19,23 +21,26 @@ This guide uses the v3 workflow throughout:
 4. Call authenticated endpoints with the session ID.
 
 <Card title="Walk through the v3 session flow" icon="arrow-right" href="/authentication/v3-session-flow">
-  The full four-step workflow, with the request and response at every step.
+  Follow the complete four-step workflow, with the request, response, and required credentials at each step.
 </Card>
 
 ## API v4
 
-API v4 introduces a modern authentication model built around user-authorized access tokens. Instead of session-based authentication, v4 uses [OAuth-style](https://oauth.net/2/access-tokens/) token authorization, so users explicitly grant an application permission to access their TMDB account.
+API v4 introduces a user authentication workflow based on **access tokens**. A typical user-authentication flow generates a request token, asks the user to authorize it on TMDB, and then exchanges the approved request token for a user access token.
 
-Some endpoints support converting a user-authorized v4 token into a v3 session, which lets an application reach endpoints that still require session-based authentication. That conversion requires the user to grant **write permission** during authorization.
+A v4 access token can also be used to create a v3 session ID through the **Create Session (from v4 token)** endpoint. The v4 token must have been authorized by the user with write permission for this conversion.
 
-## Which one should you use
+This means that applications using v4 authentication can still access v3 endpoints that require a session ID.
 
-| If you are… | Use |
+## Choosing an authentication method
+
+| If you need to… | Authentication |
 | --- | --- |
-| Reading public data (search, discover, movie details) | v3 Bearer token |
-| Performing user actions (rate, favorite, watchlist) | v3 session ID |
-| Building a multi-user app with explicit user consent | v4 access token, converted to a v3 session where needed |
+| Make application-level requests to documented v3 endpoints | API Read Access Token or API key |
+| Perform user-specific actions such as ratings, favorites, or watchlists | v3 session ID |
+| Build a user-authenticated workflow using v4 | v4 access token |
+| Use a v4-authorized user with an endpoint that requires a v3 session | Convert the v4 access token to a v3 session ID |
 
 <Note>
-Many user-specific endpoints still rely on the v3 session workflow, which is why this guide focuses on v3 authentication.
+This guide uses the v3 API and focuses on the v3 session workflow because several of the documented user-specific endpoints require a v3 session ID. The v4 workflow is covered here to explain how it differs and how a v4-authorized user can be connected to v3 session-based endpoints.
 </Note>

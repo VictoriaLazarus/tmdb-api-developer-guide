@@ -10,7 +10,7 @@ To follow this guide you need:
 - A configured environment with the required variables.
 - A v3 session ID for endpoints that perform authenticated user actions, such as ratings and account states.
 
-If you do not have an account yet, the steps below get you from zero to credentials.
+If you do not have an account yet, the steps below explains how to.
 
 ## Create a TMDB account
 
@@ -21,14 +21,10 @@ If you do not have an account yet, the steps below get you from zero to credenti
     <img src="/assets/images/tmdb-signup.png" />
   </Step>
   <Step title="Verify your email">
-    TMDB sends a verification link. Confirm it, then sign in with your username and password.
-  </Step>
-  <Step title="Request API access">
-    Open **Settings**, select **API** in the left-hand menu, and complete the API access form.
+    TMDB sends a verification link to the email you entered while signing up. Confirm it, then sign in with your username and password.
   </Step>
   <Step title="Copy your credentials">
-    Scroll to **API Read Access Token** and **API Key** and copy both values.
-
+    Open **Settings**, select **API** in the left-hand menu, scroll to **API Read Access Token** and **API Key** and copy both values.
     <img src="/assets/images/tmdb-api-settings.png" />
   </Step>
 </Steps>
@@ -40,7 +36,7 @@ Both credentials authenticate a request, but they work differently.
 | Credential | How it is sent | Use it for |
 | --- | --- | --- |
 | API Read Access Token | `Authorization: Bearer <token>` header | The recommended default for all requests in this guide |
-| API Key | `api_key` query parameter | An alternative when a client cannot set headers |
+| API Key | `api_key` query parameter | An alternative if you'll rather use an API key |
 
 <Warning>
 Treat both values as secrets. Do not commit them to source control or ship them in client-side code where a user can read them. For browser and mobile apps, proxy TMDB calls through a backend you control.

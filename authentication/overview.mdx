@@ -1,10 +1,9 @@
 ---
 title: "Authentication overview"
-description: "The three ways to authenticate a TMDB request, and when each one applies."
+description: "How TMDB authenticates applications and users, and which credentials each type of request requires."
 ---
 
-Every TMDB request must identify your application. Some requests must also identify a **user**.
-
+Every TMDB request needs application-level authentication. But for requests that access or modify user-specific data, you need user authentication.
 ## The three levels
 
 <CardGroup cols={3}>
@@ -65,6 +64,6 @@ A Bearer token authenticates your **application**, not a user. Sending a valid B
     Rate titles without asking the user to sign in.
   </Card>
   <Card title="v4 access token" icon="arrow-right" href="/authentication/v4-tokens">
-    OAuth-style authorization, converted to a v3 session.
+    Authenticate a user with the v4 access-token workflow.
   </Card>
 </CardGroup>
