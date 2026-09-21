@@ -2,27 +2,51 @@
 title: "Changelog"
 description: "Notable changes to this documentation."
 ---
+# Changelog
+
+<Update label="2026-09-21" description="Expanded authentication and getting started documentation">
+
+**Changed**
+
+- Reworked the Getting Started section to guide readers through their first authenticated API request and interpreting the response.
+- Revised authentication documentation to clarify the differences between API Read Access Tokens, v3 sessions, guest sessions, and v4 user access tokens.
+- Clarified the v4 user authorization flow and the process for converting a user-authorized v4 access token into a v3 session.
+- Refined guest session documentation to explain when and why to use a guest session.
+- Expanded troubleshooting guidance for common authentication and API request failures.
+- Refined endpoint and group descriptions to make use cases, prerequisites, and implementation guidance clearer.
+- Removed unnecessary image URL guidance from the first-request tutorial to keep the getting-started flow focused on making and understanding an API request.
+
+**Added**
+
+- A dedicated v4 access token guide covering user authorization and v4-to-v3 session conversion.
+- Additional troubleshooting guidance for authentication and account-related errors.
+- Clearer navigation from getting started content to authentication, API reference, and troubleshooting documentation.
+</Update>
 
 <Update label="2026-09-16" description="Structure and reference cleanup">
-  **Changed**
+ 
+**Changed**
 
-  - Moved every request and response example out of endpoint descriptions. The reference panel renders them from the specification, so they are no longer duplicated in prose.
-  - Documented all 304 response fields on the schema itself, so field descriptions appear inline in the response panel.
-  - Documented all 191 parameters on the parameter objects rather than in markdown tables.
-  - Attached error causes and fixes to the status code that returns them, so guidance appears in the response tab for that error.
+- Moved request and response examples out of endpoint descriptions. The reference panel renders them from the specification, so they are no longer duplicated in prose.
+- Documented response fields on the schema itself so field descriptions appear inline in the response panel.
+- Documented parameters on their parameter objects rather than duplicating them in markdown tables.
+- Attached error causes and fixes to the status codes that return them, so relevant guidance appears alongside the corresponding error response.
 
-  **Added**
+**Added**
 
-  - Overview, Getting started, Authentication, Errors, and Changelog sections in the top navigation.
-  - A dedicated [Errors](/errors/overview) section covering the error object, TMDB status codes, and troubleshooting.
-  - Group descriptions for Authentication, Account, Search, Discover, Movies, Networks, and Certifications.
+- Overview, Getting Started, Authentication, Errors, and Changelog sections to the top navigation.
+- A dedicated [Errors](/errors/overview) section covering the error object, TMDB status codes, and troubleshooting.
+- Group descriptions for Authentication, Account, Search, Discover, Movies, Networks, and Certifications.
 </Update>
 
-<Update label="2026-09-01" description="Initial release">
-  **Added**
+<Update label="2026-09-15" description="Initial release">
 
-  - 52 documented TMDB endpoints across seven groups, each tested against the live API.
-  - The v3 authentication workflow, from request token to session ID.
-  - Guest session support for ratings without a TMDB account.
-  - Per-endpoint use cases, prerequisites, and implementation notes.
+**Added**
+
+- 52 documented TMDB endpoints across seven groups, each tested against the live API.
+- The v3 authentication workflow, from request token to session ID.
+- Guest session support for ratings without a TMDB account.
+- Per-endpoint use cases, prerequisites, and implementation notes.
 </Update>
+
+
