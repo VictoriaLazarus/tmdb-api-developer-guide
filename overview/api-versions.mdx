@@ -26,7 +26,7 @@ For user-specific actions such as rating movies, managing favorites, and updatin
 
 API v4 introduces a user authentication workflow based on **access tokens**. A typical user-authentication flow generates a request token, asks the user to authorize it on TMDB, and then exchanges the approved request token for a user access token.
 
-A v4 access token can also be used to create a v3 session ID through the **Create Session (from v4 token)** endpoint. The v4 token must have been authorized by the user with write permission for this conversion.
+A v4 access token can also be used to create a v3 session ID through the **Create Session (from v4 token)** endpoint. However, the v4 token must have been authorized by the user with write permission for this conversion.
 
 This means that applications using v4 authentication can still access v3 endpoints that require a session ID.
 
