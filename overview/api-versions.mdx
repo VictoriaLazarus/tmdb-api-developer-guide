@@ -11,9 +11,7 @@ API v3 is the version used throughout this guide. It provides endpoints for retr
 
 For application-level access, v3 supports an API key or an API Read Access Token sent as a Bearer token. The Bearer token can be used for requests across both v3 and v4.
 
-For user-specific actions such as rating movies, managing favorites, and updating watchlists, v3 uses a session ID. A session ID can be created by generating a request token, approving it, and exchanging the approved token for a session ID.
-
-This guide uses the v3 workflow for user-authenticated requests:
+For user-specific actions such as rating movies, managing favorites, and updating watchlists, v3 uses a session ID. Below is the workflow to generate the ID:
 
 1. Create a request token.
 2. Approve the request token.
