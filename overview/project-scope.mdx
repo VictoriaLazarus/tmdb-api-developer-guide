@@ -5,15 +5,15 @@ description: "What this guide covers, how APIs were tested, and how the referenc
 
 ## Scope
 
-This guide documents and tests 52 TMDB API endpoints across authentication, account, search, discover, movies, networks, and certifications.
+This guide tests and documents 52 TMDB API endpoints across authentication, account, search, discover, movies, networks, and certifications.
 
-Each endpoint goes beyond a basic request-and-response example. The documentation covers parameters, authentication requirements, practical use cases, response schemas, error responses, and troubleshooting guidance based on testing during implementation.
+The documentation covers parameters, authentication requirements, practical use cases, response schemas, error responses, and troubleshooting guidance based on testing during implementation.
 
 ## Method
 
 Every endpoint in this guide was tested against the live TMDB API. Parameters and authentication requirements were verified through actual requests, and response schemas were validated against observed API responses.
 
-Documented errors were reproduced during testing before being added to the guide. When the error message or response body provides more specific information than the HTTP status code alone, the endpoint documentation calls out that distinction and explains the relevant fix.
+Each documented error was reproduced during testing to verify the API’s actual behavior. Where the error message or response body provided more useful information than the HTTP status code alone, the documentation included those details and explained how to resolve the issue.
 
 ## How the reference is structured
 
