@@ -107,26 +107,13 @@
       "label": "API Reference",
       "href": "/api-reference"
     }
-  },
-  "footer": {
-    "links": [
-      {
-        "header": "Documentation",
-        "items": [
-          { "label": "Getting started", "href": "/getting-started/prerequisites" },
-          { "label": "Authentication", "href": "/authentication/overview" },
-          { "label": "API reference", "href": "/api-reference" },
-          { "label": "Errors", "href": "/errors/overview" }
-        ]
-      },
-      {
+  },     
         "header": "TMDB",
         "items": [
           { "label": "Developer portal", "href": "https://developer.themoviedb.org/docs" },
           { "label": "API settings", "href": "https://www.themoviedb.org/settings/api" },
           { "label": "API terms of use", "href": "https://www.themoviedb.org/api-terms-of-use" }
         ]
-      }
-    ]
-  }
-}
+      }    
+  
+
